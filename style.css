@@ -242,6 +242,34 @@ main {
   background: #4752c4;
   color: #fff;
 }
+.darkmode .events-mc-title,
+.darkmode .event-mc-header,
+.darkmode .event-mc-body {
+  color: #fff;
+}
+.darkmode .event-mc-block {
+  background: #23272b !important;
+  border-color: #444;
+}
+.darkmode .event-mc-header {
+  background: #2c3e50 !important;
+  border-bottom: 1px solid #444;
+}
+.darkmode .event-mc-block.past {
+  opacity: 0.6;
+}
+.darkmode .calendar-table-mc {
+  background: #23272b;
+  color: #fff;
+}
+.darkmode .calendar-table-mc th,
+.darkmode .calendar-table-mc td {
+  border-color: #444;
+}
+.darkmode .event-mc-day {
+  background: #43a047;
+  color: #fff;
+}
 footer {
   background-color: #2c3e50;
   color: white;
@@ -269,4 +297,101 @@ footer {
   padding: 0.5rem 1rem;
   cursor: pointer;
   border-radius: 5px;
+  z-index: 2000;
+}
+
+/* Minecraft Event Styles */
+.events-mc-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+.events-mc-overview, .events-mc-history {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.event-mc-block {
+  border: 2px solid #bdbdbd;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px #0001;
+  width: 320px;
+  min-width: 220px;
+  max-width: 100%;
+  margin-bottom: 1rem;
+  background: #f3f3f3;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 300px;
+}
+.event-mc-header {
+  padding: 0.5rem 1rem;
+  font-size: 1.1em;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  border-bottom: 1px solid #ccc;
+  border-radius: 8px 8px 0 0;
+}
+.event-mc-icon {
+  font-size: 1.5em;
+}
+.event-mc-body {
+  padding: 0.5rem 1rem;
+}
+.event-mc-block.past {
+  opacity: 0.7;
+}
+.events-mc-calendar {
+  margin: 2rem 0;
+}
+.calendar-table-wrapper {
+  overflow-x: auto;
+}
+.calendar-table-mc {
+  width: 100%;
+  min-width: 350px;
+  border-collapse: collapse;
+  margin-bottom: 0.5rem;
+  background: #fafafa;
+}
+.calendar-table-mc th, .calendar-table-mc td {
+  border: 1px solid #bdbdbd;
+  text-align: center;
+  padding: 0.3em;
+  min-width: 32px;
+}
+.event-mc-day {
+  background: #7ec850;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 4px;
+}
+@media (max-width: 900px) {
+  .events-mc-overview, .events-mc-history {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .event-mc-block {
+    width: 100%;
+    min-width: 0;
+  }
+  .calendar-table-mc {
+    font-size: 0.95em;
+  }
+}
+@media (max-width: 600px) {
+  .events-mc-calendar {
+    margin: 1rem 0;
+  }
+  .calendar-table-mc th, .calendar-table-mc td {
+    padding: 0.2em;
+    min-width: 24px;
+  }
+  .events-mc-title {
+    font-size: 1.2rem;
+  }
 }

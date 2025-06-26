@@ -5,6 +5,134 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Social Media – ParadiseNetwork.us</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .social-links-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+      margin: 2.5rem 0 2rem 0;
+      padding: 0;
+      list-style: none;
+    }
+    .social-link-card {
+      background: #f9f9f9;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(33,150,243,0.07);
+      padding: 1.3rem 2.2rem 1.1rem 2.2rem;
+      min-width: 220px;
+      max-width: 320px;
+      text-align: center;
+      transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-left: 7px solid var(--primary, #4fc3f7);
+    }
+    .social-link-card:hover, .social-link-card:focus-within {
+      background: #e3f2fd;
+      box-shadow: 0 4px 18px rgba(33,150,243,0.13);
+      transform: translateY(-3px) scale(1.03);
+      outline: none;
+    }
+    .social-link-card.discord {
+      background: #5865f2;
+      border-left-color: #404eed;
+      color: #fff;
+    }
+    .social-link-card.discord a,
+    .social-link-card.discord .desc { color: #fff; }
+    .social-link-card.discord a:hover, .social-link-card.discord a:focus { color: #d1d9ff; }
+
+    .social-link-card.youtube {
+      background: #ffebee;
+      border-left-color: #ff0000;
+      color: #b71c1c;
+    }
+    .social-link-card.youtube a { color: #c62828; }
+    .social-link-card.youtube a:hover, .social-link-card.youtube a:focus { color: #ff0000; }
+    .social-link-card.youtube .icon { color: #ff0000; }
+
+    .social-link-card.tiktok {
+      background: #e0f7fa;
+      border-left-color: #25f4ee;
+      color: #222;
+    }
+    .social-link-card.tiktok a { color: #222; }
+    .social-link-card.tiktok a:hover, .social-link-card.tiktok a:focus { color: #25f4ee; }
+    .social-link-card.tiktok .icon { color: #25f4ee; }
+
+    .social-link-card.instagram {
+      background: linear-gradient(135deg, #f9ce34 0%, #ee2a7b 50%, #6228d7 100%);
+      border-left-color: #ee2a7b;
+      color: #fff;
+    }
+    .social-link-card.instagram a,
+    .social-link-card.instagram .desc { color: #fff; }
+    .social-link-card.instagram a:hover, .social-link-card.instagram a:focus { color: #ffe082; }
+    .social-link-card.instagram .icon { color: #fff; }
+
+    .social-link-card .icon {
+      font-size: 2.2rem;
+      margin-bottom: 0.7rem;
+    }
+    .social-link-card a {
+      color: var(--primary, #2196f3);
+      font-size: 1.13rem;
+      font-weight: bold;
+      text-decoration: none;
+      margin-bottom: 0.3rem;
+      word-break: break-all;
+      transition: color 0.2s;
+    }
+    .social-link-card a:hover, .social-link-card a:focus {
+      color: #1976d2;
+      text-decoration: underline;
+    }
+    .social-link-card .desc {
+      color: #444;
+      font-size: 1rem;
+      margin-top: 0.2rem;
+    }
+    .darkmode .social-link-card {
+      background: #23272b;
+      color: #e3f2fd;
+      border-left-color: #4fc3f7;
+    }
+    .darkmode .social-link-card.discord {
+      background: #404eed;
+      border-left-color: #5865f2;
+      color: #fff;
+    }
+    .darkmode .social-link-card.youtube {
+      background: #2d0909;
+      border-left-color: #ff0000;
+      color: #ff8a80;
+    }
+    .darkmode .social-link-card.tiktok {
+      background: #11272e;
+      border-left-color: #25f4ee;
+      color: #e0f7fa;
+    }
+    .darkmode .social-link-card.instagram {
+      background: linear-gradient(135deg, #6228d7 0%, #ee2a7b 60%, #f9ce34 100%);
+      border-left-color: #ee2a7b;
+      color: #fff;
+    }
+    .darkmode .social-link-card .desc {
+      color: #b0bec5;
+    }
+    .darkmode .social-link-card a {
+      color: #4fc3f7;
+    }
+    .darkmode .social-link-card a:hover, .darkmode .social-link-card a:focus {
+      color: #81d4fa;
+    }
+    @media (max-width: 700px) {
+      .social-links-list { flex-direction: column; gap: 1.2rem; }
+      .social-link-card { min-width: unset; max-width: 100%; }
+    }
+  </style>
 </head>
 <body>
   <button class="toggle-btn" onclick="toggleDarkMode()">🌙</button>
@@ -29,7 +157,31 @@
     <section class="card">
       <h2>Social Media</h2>
       <p>Folge uns auf TikTok, Instagram, YouTube und bleib in Verbindung!</p>
-      <!-- Social Links, ggf. Social Feed -->
+      <div style="margin:2rem 0 1.2rem 0; text-align:center; font-size:1.15rem; font-weight:bold;">
+        <span style="font-size:1.3em;">📣</span> Offizielle Kanäle:
+      </div>
+      <ul class="social-links-list">
+        <li class="social-link-card discord">
+          <span class="icon" aria-hidden="true">🌐</span>
+          <a href="https://discord.gg/qsM4tbsKv4" target="_blank" rel="noopener">Discord</a>
+          <div class="desc">Werde Teil der Community</div>
+        </li>
+        <li class="social-link-card youtube">
+          <span class="icon" aria-hidden="true">🎥</span>
+          <a href="https://www.youtube.com/@Paradise_Network" target="_blank" rel="noopener">YouTube</a>
+          <div class="desc">Server-Videos &amp; Highlights</div>
+        </li>
+        <li class="social-link-card tiktok">
+          <span class="icon" aria-hidden="true">📱</span>
+          <a href="https://www.tiktok.com/@_paradisenetwork_?_t=ZN-8wNRSzqnrRW&_r=1" target="_blank" rel="noopener">TikTok</a>
+          <div class="desc">Kurzclips &amp; Einblicke</div>
+        </li>
+        <li class="social-link-card instagram">
+          <span class="icon" aria-hidden="true">📸</span>
+          <a href="https://www.instagram.com/_paradisenetwork" target="_blank" rel="noopener">Instagram</a>
+          <div class="desc">Screenshots &amp; News</div>
+        </li>
+      </ul>
     </section>
   </main>
   <footer>

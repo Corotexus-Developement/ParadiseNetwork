@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Die Geschichte von ParadiseNetwork</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .history-section {
+      max-width: 800px;
+      margin: 2.5rem auto 2rem auto;
+      background: #f9f9f9;
+      border-radius: 12px;
+      padding: 2rem 2.2rem;
+      box-shadow: 0 2px 12px rgba(33,150,243,0.07);
+      border-left: 5px solid var(--primary, #4fc3f7);
+      font-size: 1.09rem;
+      color: #23272b;
+    }
+    .history-section h1 {
+      margin-top: 0;
+      font-size: 2rem;
+      color: var(--primary, #2196f3);
+    }
+    .history-section hr {
+      border: none;
+      border-top: 1.5px solid #e0e0e0;
+      margin: 1.2rem 0;
+    }
+    .history-section ul {
+      margin: 0.5rem 0 0 1.2rem;
+      padding-left: 1.2rem;
+    }
+    .darkmode .history-section {
+      background: #23272b;
+      color: #e3f2fd;
+      border-left-color: #4fc3f7;
+      box-shadow: 0 2px 16px rgba(33,150,243,0.13);
+    }
+    .darkmode .history-section h1 {
+      color: #4fc3f7;
+    }
+    .history-section .history-block {
+      margin-bottom: 2rem;
+    }
+    .history-section .history-block:last-child {
+      margin-bottom: 0;
+    }
+    .scroll-to-top-btn {
+      position: fixed;
+      right: 2.2rem;
+      bottom: 2.2rem;
+      z-index: 9999;
+      background: var(--primary, #2196f3);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      font-size: 2rem;
+      box-shadow: 0 2px 8px rgba(33,150,243,0.18);
+      cursor: pointer;
+      opacity: 0.85;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.2s, background 0.2s;
+    }
+    .scroll-to-top-btn:hover, .scroll-to-top-btn:focus {
+      opacity: 1;
+      background: #1976d2;
+      outline: none;
+    }
+    .darkmode .scroll-to-top-btn {
+      background: #4fc3f7;
+      color: #23272b;
+    }
+    .darkmode .scroll-to-top-btn:hover, .darkmode .scroll-to-top-btn:focus {
+      background: #0288d1;
+      color: #fff;
+    }
+    @media (max-width: 600px) {
+      .scroll-to-top-btn {
+        right: 1rem;
+        bottom: 1rem;
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <button class="toggle-btn" onclick="toggleDarkMode()">🌙</button>
+  <button class="hamburger" id="hamburger" aria-label="Navigation öffnen/schließen"><span></span></button>
+  <header>
+    <h1>📖 Die Geschichte von ParadiseNetwork</h1>
+  </header>
+  <nav id="mainNav" class="collapsed">
+    <a href="index.html">Startseite</a>
+    <a href="infos.html">Infos</a>
+    <a href="ueber-uns.html">Über uns</a>
+    <a href="galerie.html">Galerie</a>
+    <a href="guides.html">Guides & Hilfe</a>
+    <a href="events.html">Events</a>
+    <a href="karte.html">Karte</a>
+    <a href="bewerben.html">Bewerben</a>
+    <a href="creator.html">Content Creator</a>
+    <a href="social.html">Social Media</a>
+  </nav>
+  <main>
+    <section class="history-section">
+      <div class="history-block">
+        <p>Pasadise Network entstand nicht über Nacht – sondern aus einer einfachen Idee, viel Herzblut und einer kleinen Gruppe von Minecraft-Fans, die mehr wollten als nur einen gewöhnlichen Server.</p>
+      </div>
+      <hr>
+      <div class="history-block">
+        <h2 style="margin-top:0;">🌱 Die Anfänge – klein, aber mit großer Vision</h2>
+        <p>In der Beta-Phase war Pasadise ein ambitioniertes Herzensprojekt. Mit einer klaren Vorstellung von einem fairen, kreativen Freebuild-Server starteten wir einen Testbetrieb mit einem kleinen Kreis an Spielern. Maximal fünf aktive Spieler begleiteten uns durch diese Zeit – eine überschaubare, aber wichtige Community, die uns wertvolles Feedback gab.</p>
+        <p>In dieser frühen Phase probierten wir Konzepte aus, testeten Plugins, feilten an der Welt und sammelten Erfahrungen – immer mit dem Ziel, etwas Eigenes, Echtes zu schaffen.</p>
+      </div>
+      <hr>
+      <div class="history-block">
+        <h2>🔧 Der große Umbau – 3 Monate Wartung</h2>
+        <p>Nach der Beta merkten wir: Damit Paradise wirklich das werden kann, was wir uns vorstellen, braucht es mehr. Mehr Planung, mehr Stabilität, mehr Struktur.</p>
+        <p>Deshalb ging der Server für drei Monate in Wartung. In dieser Zeit haben wir:</p>
+        <ul>
+          <li>das technische Fundament überarbeitet,</li>
+          <li>neue Features implementiert,</li>
+          <li>Bugs behoben,</li>
+          <li>die Serverstruktur neu durchdacht,</li>
+          <li>und die Zukunft des Projekts geplant.</li>
+        </ul>
+        <p>Diese Pause war kein Rückschritt, sondern ein nötiger Neuanfang – getragen von unserer Überzeugung, dass Qualität und Gemeinschaft vor Schnelligkeit gehen.</p>
+      </div>
+      <hr>
+      <div class="history-block">
+        <h2>🚀 Jetzt geht's los – der Release steht bevor</h2>
+        <p>Diese Woche ist es endlich so weit:<br>
+        Der offizielle Release von ParadiseNetwork steht an – stabil, durchdacht und bereit für neue Spieler.</p>
+        <p><b>Was euch erwartet:</b></p>
+        <ul>
+          <li>Ein offenes Freebuild-Konzept mit Land-System und Wildnis</li>
+          <li>Schutzsysteme, die Bauwerke sicher halten</li>
+          <li>Ein aufmerksames Team und eine Community im Aufbau</li>
+          <li>Raum für Kreativität, Technik und Teamwork</li>
+          <li>Regelmäßige Events, Belohnungen und spannende Features</li>
+        </ul>
+      </div>
+      <hr>
+      <div class="history-block">
+        <h2>💬 Die Zukunft schreiben wir gemeinsam</h2>
+        <p>Wir wissen, dass große Dinge klein anfangen.<br>
+        Und genau deshalb sind wir stolz auf unsere Geschichte – mit Höhen, Rückschlägen und einem klaren Ziel vor Augen.<br>
+        Paradise Network ist jetzt bereit für euch.<br>
+        Und wer weiß – vielleicht schreibst du das nächste Kapitel mit uns?</p>
+        <p style="color:#388e3c; font-weight:bold;">💚 Danke, dass du Teil davon bist.</p>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>© 2025 ParadiseNetwork.us – Ein Projekt für die Community</p>
+  </footer>
+  <button class="scroll-to-top-btn" id="scrollToTopBtn" aria-label="Nach oben"><span style="pointer-events:none;">↑</span></button>
+  <script>
+    // Darkmode persistent über localStorage
+    function toggleDarkMode() {
+      document.body.classList.toggle('darkmode');
+      if (document.body.classList.contains('darkmode')) {
+        localStorage.setItem('darkmode', '1');
+      } else {
+        localStorage.setItem('darkmode', '0');
+      }
+    }
+    if (localStorage.getItem('darkmode') === '1') {
+      document.body.classList.add('darkmode');
+    }
+    const hamburger = document.getElementById('hamburger');
+    const nav = document.getElementById('mainNav');
+    function closeNavOnResize() {
+      if (window.innerWidth > 900) {
+        nav.classList.remove('expanded');
+        nav.classList.remove('collapsed');
+        hamburger.classList.remove('active');
+      } else {
+        nav.classList.add('collapsed');
+        nav.classList.remove('expanded');
+        hamburger.classList.remove('active');
+      }
+    }
+    hamburger.addEventListener('click', function() {
+      if (nav.classList.contains('expanded')) {
+        nav.classList.remove('expanded');
+        nav.classList.add('collapsed');
+        hamburger.classList.remove('active');
+      } else {
+        nav.classList.add('expanded');
+        nav.classList.remove('collapsed');
+        hamburger.classList.add('active');
+      }
+    });
+    nav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 900) {
+          nav.classList.remove('expanded');
+          nav.classList.add('collapsed');
+          hamburger.classList.remove('active');
+        }
+      });
+    });
+    window.addEventListener('resize', closeNavOnResize);
+    window.addEventListener('DOMContentLoaded', closeNavOnResize);
+    // Scroll-to-top Button
+    const scrollBtn = document.getElementById('scrollToTopBtn');
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 200) {
+        scrollBtn.style.display = 'flex';
+      } else {
+        scrollBtn.style.display = 'none';
+      }
+    });
+    scrollBtn.addEventListener('click', function() {
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    });
+  </script>
+</body>
+</html>

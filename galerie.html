@@ -131,6 +131,109 @@
     .darkmode .gallery-folder-header { background: #23272b; color: #fff; }
     .darkmode .gallery-folder-content { background: #181a1b; }
     .darkmode .gallery-images img { border: 2px solid #222; }
+    .gallery-info-box {
+      border-radius: 8px;
+      padding: 1rem 1.5rem;
+      margin-bottom: 1.2rem;
+      border-left-width: 4px;
+      border-left-style: solid;
+      font-size: 1.08rem;
+      transition: background 0.2s, color 0.2s;
+    }
+    .gallery-info-box-light {
+      background: #f9f9f9;
+      border-left-color: var(--primary, #4fc3f7);
+      color: #23272b;
+    }
+    .gallery-info-box-tip {
+      background: #f1f8e9;
+      border-left-color: #8bc34a;
+      color: #23272b;
+    }
+    .gallery-info-box-note {
+      background: transparent;
+      border-left: none;
+      color: #888;
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+      padding: 0 0 0 0;
+    }
+    .gallery-info-box-tip ul {
+      margin: 0.5rem 0 0 1.2rem;
+      padding-left: 1.2rem;
+    }
+    .gallery-info-box a {
+      color: var(--primary, #2196f3);
+      text-decoration: underline;
+      word-break: break-all;
+    }
+    .gallery-info-box a:hover {
+      color: #1976d2;
+      text-decoration: underline;
+    }
+    /* Darkmode Anpassungen */
+    .darkmode .gallery-info-box-light {
+      background: #23272b;
+      color: #fff;
+      border-left-color: #4fc3f7;
+    }
+    .darkmode .gallery-info-box-tip {
+      background: #263726;
+      color: #e8f5e9;
+      border-left-color: #8bc34a;
+    }
+    .darkmode .gallery-info-box-note {
+      color: #bbb;
+      background: transparent;
+    }
+    .darkmode .gallery-info-box a {
+      color: #4fc3f7;
+    }
+    .darkmode .gallery-info-box a:hover {
+      color: #81d4fa;
+    }
+    .scroll-to-top-btn {
+      position: fixed;
+      right: 2.2rem;
+      bottom: 2.2rem;
+      z-index: 9999;
+      background: var(--primary, #2196f3);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      font-size: 2rem;
+      box-shadow: 0 2px 8px rgba(33,150,243,0.18);
+      cursor: pointer;
+      opacity: 0.85;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.2s, background 0.2s;
+    }
+    .scroll-to-top-btn:hover, .scroll-to-top-btn:focus {
+      opacity: 1;
+      background: #1976d2;
+      outline: none;
+    }
+    .darkmode .scroll-to-top-btn {
+      background: #4fc3f7;
+      color: #23272b;
+    }
+    .darkmode .scroll-to-top-btn:hover, .darkmode .scroll-to-top-btn:focus {
+      background: #0288d1;
+      color: #fff;
+    }
+    @media (max-width: 600px) {
+      .scroll-to-top-btn {
+        right: 1rem;
+        bottom: 1rem;
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -155,7 +258,28 @@
   <main>
     <section class="card">
       <h2>Galerie</h2>
-      <p>Erkunde die schönsten Bilder aus dem Paradise Universum.</p>
+      <p>Einblicke in die Welt von Paradise Network</p>
+      <p>Tauche ein in unsere Community-Welt! Hier findest du eine Auswahl an Bildern und Screenshots von beeindruckenden Bauwerken, besonderen Momenten, Community-Events und kreativen Ideen, die unsere Spieler umgesetzt haben.</p>
+      <hr style="margin: 1.5rem 0;">
+      <div class="gallery-info-box gallery-info-box-light">
+        <strong>📸 Mitmachen erwünscht!</strong><br>
+        Du hast coole Screenshots oder Videoaufnahmen vom Server?<br>
+        Dann teile sie mit uns auf Discord im
+        <a href="https://discord.com/channels/1162749568551760002/1162749571949150218" target="_blank" rel="noopener"><b>#╰┈➤「🗺bilder」</b></a>.<br>
+        Ausgewählte Bilder landen mit Namensnennung hier in der Galerie!
+      </div>
+      <div class="gallery-info-box gallery-info-box-tip">
+        <strong>💡 Tipps für gute Screenshots:</strong>
+        <ul>
+          <li>Verwende Optifine oder Shader für bessere Beleuchtung</li>
+          <li>Positioniere dich bei Tag für klare Sicht</li>
+          <li>Vermeide Chat-Sicht oder GUI (F1 drücken!)</li>
+          <li>Perspektive: Zeige dein Bauwerk aus mehreren Blickwinkeln</li>
+        </ul>
+      </div>
+      <div class="gallery-info-box gallery-info-box-note">
+        Die Galerie wird regelmäßig erweitert – schau immer mal wieder vorbei!
+      </div>
     </section>
 
     <div class="gallery-folder-list">
@@ -229,6 +353,8 @@
       <img id="lightbox-img" src="" alt="Screenshot">
       <div id="lightbox-caption" style="color:#fff; margin-top:0.5rem;"></div>
     </div>
+
+    <button class="scroll-to-top-btn" id="scrollToTopBtn" aria-label="Nach oben"><span style="pointer-events:none;">↑</span></button>
   </main>
   <footer>
     <p>© 2025 ParadiseNetwork.us – Ein Projekt für die Community</p>
@@ -352,6 +478,19 @@
       } else if (e.key === 'Escape') {
         closeLightbox({target: {classList: {contains: () => true}}});
       }
+    });
+
+    // Scroll-to-top Button
+    const scrollBtn = document.getElementById('scrollToTopBtn');
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 200) {
+        scrollBtn.style.display = 'flex';
+      } else {
+        scrollBtn.style.display = 'none';
+      }
+    });
+    scrollBtn.addEventListener('click', function() {
+      window.scrollTo({top: 0, behavior: 'smooth'});
     });
   </script>
 </body>

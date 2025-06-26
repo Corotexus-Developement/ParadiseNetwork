@@ -5,6 +5,163 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Infos – ParadiseNetwork.us</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .infos-section {
+      max-width: 900px;
+      margin: 2rem auto;
+      background: transparent;
+      border-radius: 10px;
+      padding: 0;
+      box-shadow: none;
+      font-size: 1.09rem;
+      color: #23272b;
+    }
+    .infos-box {
+      background: #f9f9f9;
+      border-radius: 10px;
+      padding: 2rem 2.2rem;
+      box-shadow: 0 2px 12px rgba(33,150,243,0.07);
+      border-left: 5px solid var(--primary, #4fc3f7);
+      margin-bottom: 2rem;
+      color: #23272b;
+      transition: background 0.2s, color 0.2s;
+    }
+    .infos-box h2 {
+      margin-top: 0;
+      color: var(--primary, #2196f3);
+    }
+    .infos-box:last-child {
+      margin-bottom: 0;
+    }
+    .infos-overview {
+      background: #e3f2fd;
+      border-left-color: #42a5f5;
+      padding: 1.5rem 2rem;
+    }
+    .infos-overview ul {
+      margin: 0.5rem 0 0 1.2rem;
+      padding-left: 1.2rem;
+      list-style: none;
+    }
+    .infos-overview ul li {
+      margin-bottom: 0.4rem;
+      cursor: pointer;
+      color: #1976d2;
+      text-decoration: underline;
+      transition: color 0.2s;
+      padding-left: 0;
+    }
+    .infos-overview ul li:hover {
+      color: #0d47a1;
+    }
+    .infos-box .regeln-block {
+      background: #fff;
+      border-radius: 8px;
+      padding: 1rem 1.2rem;
+      margin-bottom: 1.2rem;
+      border-left: 4px solid #ffb300;
+      font-size: 1.01rem;
+    }
+    .infos-box .regeln-block:last-child {
+      margin-bottom: 0;
+    }
+    .darkmode .infos-section {
+      color: #e3f2fd;
+    }
+    .darkmode .infos-box {
+      background: #23272b;
+      color: #e3f2fd;
+      border-left-color: #4fc3f7;
+      box-shadow: 0 2px 16px rgba(33,150,243,0.13);
+    }
+    .darkmode .infos-box h2 {
+      color: #4fc3f7;
+    }
+    .darkmode .infos-overview {
+      background: #1e2936;
+      border-left-color: #42a5f5;
+    }
+    .darkmode .infos-box .regeln-block {
+      background: #263238;
+      color: #ffe082;
+      border-left-color: #ffb300;
+    }
+    .infos-box.clickable {
+      cursor: pointer;
+      transition: box-shadow 0.2s, background 0.2s, border-color 0.2s;
+    }
+    .infos-box.clickable:hover, .infos-box.clickable:focus {
+      background: #e3f2fd;
+      box-shadow: 0 4px 18px rgba(33,150,243,0.13);
+      border-color: #90caf9;
+      outline: none;
+      filter: brightness(1.04);
+    }
+    .infos-box.clickable.cta:hover, .infos-box.clickable.cta:focus {
+      background: #d0f8ce;
+      border-left-color: #66bb6a;
+      filter: brightness(1.07);
+    }
+    .darkmode .infos-box.clickable:hover, .darkmode .infos-box.clickable:focus {
+      background: #263238;
+      border-color: #42a5f5;
+      filter: brightness(1.08);
+    }
+    .darkmode .infos-box.clickable.cta:hover, .darkmode .infos-box.clickable.cta:focus {
+      background: #2e3d2f;
+      border-left-color: #81c784;
+      filter: brightness(1.12);
+    }
+    a {
+      color: var(--primary, #2196f3);
+      text-decoration: underline;
+    }
+    a:hover {
+      color: #1976d2;
+    }
+    .scroll-to-top-btn {
+      position: fixed;
+      right: 2.2rem;
+      bottom: 2.2rem;
+      z-index: 9999;
+      background: var(--primary, #2196f3);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      font-size: 2rem;
+      box-shadow: 0 2px 8px rgba(33,150,243,0.18);
+      cursor: pointer;
+      opacity: 0.85;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.2s, background 0.2s;
+    }
+    .scroll-to-top-btn:hover, .scroll-to-top-btn:focus {
+      opacity: 1;
+      background: #1976d2;
+      outline: none;
+    }
+    .darkmode .scroll-to-top-btn {
+      background: #4fc3f7;
+      color: #23272b;
+    }
+    .darkmode .scroll-to-top-btn:hover, .darkmode .scroll-to-top-btn:focus {
+      background: #0288d1;
+      color: #fff;
+    }
+    @media (max-width: 600px) {
+      .scroll-to-top-btn {
+        right: 1rem;
+        bottom: 1rem;
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <button class="toggle-btn" onclick="toggleDarkMode()">🌙</button>
@@ -26,15 +183,153 @@
     <a href="social.html">Social Media</a>
   </nav>
   <main>
-    <section class="card">
-      <h2>Infos</h2>
-      <p>Hier findest du alles Wissenswerte über unsere Serverstruktur, Regeln und mehr.</p>
-      <!-- Ergänze hier weitere Infos, Regeln, Serverdetails etc. -->
+    <section class="infos-section">
+      <div class="infos-box" id="willkommen">
+        <h2>🌴 Willkommen auf Pasadise Network</h2>
+        <div>
+          Hier findest du alles Wissenswerte über unsere Serverstruktur, Regeln und mehr.
+        </div>
+      </div>
+      <div class="infos-box infos-overview" id="uebersicht">
+        <b>🧾 Übersicht der Inhalte</b>
+        <ul>
+          <li onclick="document.getElementById('serverstruktur').scrollIntoView({behavior:'smooth'})">🛠️ Serverstruktur</li>
+          <li onclick="document.getElementById('regeln').scrollIntoView({behavior:'smooth'})">📜 Regeln</li>
+          <li onclick="document.getElementById('events').scrollIntoView({behavior:'smooth'})">🎉 Events & Community</li>
+          <li onclick="document.getElementById('technik').scrollIntoView({behavior:'smooth'})">🌐 Technische Details</li>
+          <li onclick="document.getElementById('kontakt').scrollIntoView({behavior:'smooth'})">📬 Kontakt & Links</li>
+        </ul>
+      </div>
+      <div class="infos-box" id="serverstruktur">
+        <h2>🛠️ Serverstruktur</h2>
+        Gestalte deine Welt, wie du willst – mit klarer Struktur, ohne Grenzen.
+        <ul>
+          <li>Freebuild: Baue frei in einer offenen Welt – ohne zwingende Zonen.</li>
+          <li>Grundstücke & Lands: Sichere dir dein eigenes Plot oder lebe in der offenen Welt.</li>
+          <li>Weltenkonzept: Hauptwelt (/Freebuild), Farmwelt (/farmwelt), Spawnwelt (/spawn) End (bald verfügbar)</li>
+          <li>Wirtschaft: Optionales Handelssystem mit Shops (bald verfügbar), Jobs (/job), Wirtschaft (/shop, /sell)</li>
+          <li>Server-Team: Freundliches & aktives Team für Support und Moderation</li>
+        </ul>
+      </div>
+      <div class="infos-box" id="regeln">
+        <h2>📜 Regeln</h2>
+        <div class="regeln-block">
+          <b>1.1 Allgemeines</b><br>
+          §1 → Zweitaccounts sind nur für die Nutzung einer Webcam erlaubt.<br>
+          §2 → Anweisungen vom Serverteam sind Folge zu leisten! Blockieren oder Ignorieren ist keine Option.<br>
+          §3 → Unpingbare Zeichen, obszönes, pornographisches, Rassistisches, Religion feindliches, Homophobes oder Sexistisches Verhalten sowie Profilbilder oder Bios sind untersagt.<br>
+          §4 → Das Werben für andere Discord Server oder Plattformen im Benutzernamen, Profilbildern ist verboten.<br>
+          §5 → Private Daten wie Telefonnummern, Adressen, Passwörter und Ähnlichem dürfen nicht öffentlich ausgetauscht werden. (Ein Serverteammitglied wird dich niemals nach sensiblen Daten fragen.)<br>
+          §6 → Jeder Hack- und/oder DDoS-Angriff gegen diesen Server ist strafbar und wird strafrechtlich verfolgt.<br>
+        </div>
+        <div class="regeln-block">
+          <b>1.2 Voicechannel</b><br>
+          §7 → Störung der Kommunikation, Belästigung und jegliches Bedrohen von Nutzern ist untersagt.<br>
+          §8 → Das Abspielen von Musik (außer mit dem dafür vorgesehenem Bot) und Geräuschen ist untersagt.<br>
+          §9 → Das dauerhafte "Switchen" von Channel zu Channel ist untersagt (Channelhopping)!<br>
+          §10→ Das Aufzeichnen von Supportgesprächen ist verboten und kann Strafrechtlich verfolgt werden!<br>
+        </div>
+        <div class="regeln-block">
+          <b>1.2 Tickets</b><br>
+          §1 → Das pingen von Teamlern ist untersagt!<br>
+          §2 → Das öffnen eines Tickets ist ohne triftigen Grund zu unterlassen.<br>
+          §3 → Private Angelegenheiten sollten nicht in ein Ticket eingebracht werden.<br>
+        </div>
+        <div class="regeln-block">
+          <b>Ingame Regeln</b><br>
+          <b>2.1 Spielverhalten</b><br>
+          §1 → Das Nutzen von Mods und Hacks, die dir einen Spielvorteil gegenüber anderen Mitspielern verschaffen, ist verboten! (X-Ray, Fly, Fullbright, usw).<br>
+          §2 → Dein Skin und Spielername dürfen die Regeln genauso wenig verletzten, wie dein Profilbild und oder deine Bio.<br>
+          §3 → Bugs sind zu melden und dürfen nicht ausgenutzt werden.<br>
+          §4 → Nach einem PVP- Kampf müssen die Items NICHT zurück gegeben werden.<br>
+        </div>
+        <div class="regeln-block">
+          <b>2.2 Chatverhalten</b><br>
+          §5 → Werbung für andere Server ist in unserem Chat verboten.<br>
+          §6 → Mach keine Werbung für unseren Server auf anderen Servern ohne deren Erlaubnis.<br>
+          §7 → Für private gespräche benutze /tell.<br>
+          §8 → Spamming, Caps, Beleidigung, Trolling, Drohungen oder ähnliches werden weder im öffentlichen chat, noch per tell geduldet.<br>
+        </div>
+        <div class="regeln-block">
+          <b>2.3 Bauregeln</b><br>
+          §9 → Die chatregeln gelten auch für Schilder.<br>
+          §10 → Redstone Clocks sind verboten, es sei denn sie sind manuell abschaltbar. Sie müssen beim Verlassen des Servers ausgeschaltet sein.<br>
+          §11 → Griefen ist untersagt<br>
+          §12 → Spielerfallen sind verboten<br>
+          §13 → Zerstöre bitte nicht die Natur. Zum farmen gibt es eine Farmwelt!<br>
+          §14 → Obszöne oder Rechtsradikale Objekte sind verboten.<br>
+        </div>
+        <div class="regeln-block">
+          <b>2.4 Landes Regeln</b><br>
+          §15 → (Kommen noch)<br>
+        </div>
+        <div style="font-size:0.98rem; color:#888; margin-top:0.5rem;">
+          Dem Team ist es jederzeit vorbehalten, die Regeln zu ändern und es liegt in eigen Verantwortung darauf zu achten und die Regeln regelmäßig zu lesen.<br>
+          Unwissenheit schützt vor Strafe nicht! <br>
+          *Du stimmst automatisch dem Regelwerk zu wenn du dem Server betrittst.
+        </div>
+      </div>
+      <div class="infos-box clickable" id="events" tabindex="0"
+        onclick="window.location.href='events.html'"
+        onkeydown="if(event.key==='Enter'){window.location.href='events.html'}">
+        <h2>🎉 Events & Community</h2>
+        Mehr als nur Bauen – gemeinsam Spaß haben!
+        <ul>
+          <li>Regelmäßige Events: (kommt noch)</li>
+          <li>Gewinne & Belohnungen: Ränge, Items oder Ingamegeld</li>
+          <li>Community-Projekte: Städtebau, Themenzonen</li>
+          <li>Discord-Community: Tausch dich live mit anderen aus – Hilfe & Spaß garantiert!</li>
+        </ul>
+      </div>
+      <div class="infos-box" id="technik">
+        <h2>🌐 Technische Details</h2>
+        Für alle, die's genau wissen wollen.
+        <ul>
+          <li>Version: Minecraft Java 1.21.4 (ViaVersion erlaubt alle Versionen)</li>
+          <li>Server-IP: <b>paradisenetwork.us</b></li>
+          <li>Whitelist: Nein</li>
+          <li>Mods nötig: Nein – Optifine & Shader erlaubt, VoiceChat (optional)</li>
+          <li>Serverleistung: Stabil & leistungsfähig für Bau, Redstone und mehr</li>
+          <li>Backups & Schutz: Automatische Sicherungen, aktive Moderation, ParadiseSecurity</li>
+        </ul>
+      </div>
+      <div class="infos-box" id="kontakt">
+        <h2>📬 Kontakt & Links</h2>
+        Noch Fragen? Wir sind für dich da!
+        <ul style="list-style:none; padding-left:0;">
+          <li>
+            <a href="https://discord.gg/qsM4tbsKv4" target="_blank" class="hero-discord" style="display:inline-block;min-width:200px;padding:0.7em 1.2em;background:#5865f2;color:#fff;border-radius:7px;font-weight:bold;text-align:center;text-decoration:none;margin-bottom:1rem;">
+              Discord beitreten
+            </a>
+          </li>
+          <li>
+            <a href="social.html" class="hero-cta" style="display:inline-block;min-width:200px;padding:0.7em 1.2em;background:#2196f3;color:#fff;border-radius:7px;font-weight:bold;text-align:center;text-decoration:none;margin-bottom:1rem;">
+              Social Media
+            </a>
+          </li>
+          <li>
+            <a href="mailto:support@paradisenetwork.us" class="hero-cta" style="display:inline-block;min-width:200px;padding:0.7em 1.2em;background:#43a047;color:#fff;border-radius:7px;font-weight:bold;text-align:center;text-decoration:none;">
+              Support Mail
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="infos-box clickable"
+        tabindex="0"
+        onclick="window.location.href='bewerben.html'"
+        onkeydown="if(event.key==='Enter'){window.location.href='bewerben.html'}"
+        style="color:#388e3c; font-weight:bold; font-size:1.08rem; background:#e8f5e9; border-left-color:#43a047;"
+        class="infos-box clickable cta">
+        ✅ Werde Teil von Pasadise Network!<br>
+        Jetzt beitreten, bauen und Spaß haben!<br>
+        ⛏️ Egal ob Solo-Spieler oder im Team – bei uns findest du deinen Platz.
+      </div>
     </section>
   </main>
   <footer>
     <p>© 2025 ParadiseNetwork.us – Ein Projekt für die Community</p>
   </footer>
+  <button class="scroll-to-top-btn" id="scrollToTopBtn" aria-label="Nach oben"><span style="pointer-events:none;">↑</span></button>
   <script>
     // Darkmode persistent über localStorage
     function toggleDarkMode() {
@@ -83,6 +378,18 @@
     });
     window.addEventListener('resize', closeNavOnResize);
     window.addEventListener('DOMContentLoaded', closeNavOnResize);
+    // Scroll-to-top Button
+    const scrollBtn = document.getElementById('scrollToTopBtn');
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 200) {
+        scrollBtn.style.display = 'flex';
+      } else {
+        scrollBtn.style.display = 'none';
+      }
+    });
+    scrollBtn.addEventListener('click', function() {
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    });
   </script>
 </body>
 </html>

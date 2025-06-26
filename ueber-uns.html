@@ -55,6 +55,131 @@
       .team-member { min-width: unset; max-width: 100%; }
     }
     .darkmode .team-member { background: #23272b; color: #fff; }
+    .about-info-box {
+      border-radius: 10px;
+      padding: 1.2rem 1.5rem;
+      margin-bottom: 1.3rem;
+      background: #f9f9f9;
+      border-left: 5px solid var(--primary, #4fc3f7);
+      color: #23272b;
+      font-size: 1.09rem;
+      transition: background 0.2s, color 0.2s;
+    }
+    .about-info-box.vision {
+      background: #f1f8e9;
+      border-left-color: #8bc34a;
+    }
+    .about-info-box.team {
+      background: #e3f2fd;
+      border-left-color: #42a5f5;
+    }
+    .about-info-box.community {
+      background: #fff3e0;
+      border-left-color: #ffb300;
+    }
+    .about-info-box.participate {
+      background: #ede7f6;
+      border-left-color: #7e57c2;
+    }
+    .about-info-box:last-child {
+      margin-bottom: 2rem;
+    }
+    .about-info-box ul {
+      margin: 0.5rem 0 0 1.2rem;
+      padding-left: 1.2rem;
+    }
+    .about-info-box strong, .about-info-box b {
+      color: var(--primary, #2196f3);
+    }
+    .darkmode .about-info-box {
+      background: #23272b;
+      color: #fff;
+      border-left-color: #4fc3f7;
+    }
+    .darkmode .about-info-box.vision {
+      background: #263726;
+      color: #e8f5e9;
+      border-left-color: #8bc34a;
+    }
+    .darkmode .about-info-box.team {
+      background: #1e2936;
+      color: #b3e5fc;
+      border-left-color: #42a5f5;
+    }
+    .darkmode .about-info-box.community {
+      background: #3e2723;
+      color: #ffe0b2;
+      border-left-color: #ffb300;
+    }
+    .darkmode .about-info-box.participate {
+      background: #311b92;
+      color: #ede7f6;
+      border-left-color: #7e57c2;
+    }
+    .card[onclick] {
+      transition: box-shadow 0.2s, background 0.2s;
+      box-shadow: 0 2px 12px rgba(33,150,243,0.08);
+      background: #f5fafd;
+      border: 1.5px solid #e3f2fd;
+      cursor: pointer;
+      outline: none;
+    }
+    .card[onclick]:hover, .card[onclick]:focus {
+      background: #e3f2fd;
+      box-shadow: 0 4px 18px rgba(33,150,243,0.13);
+      border-color: #90caf9;
+    }
+    .darkmode .card[onclick] {
+      background: #1e2936;
+      border-color: #263238;
+      color: #b3e5fc;
+    }
+    .darkmode .card[onclick]:hover, .darkmode .card[onclick]:focus {
+      background: #263238;
+      border-color: #42a5f5;
+    }
+    .scroll-to-top-btn {
+      position: fixed;
+      right: 2.2rem;
+      bottom: 2.2rem;
+      z-index: 9999;
+      background: var(--primary, #2196f3);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      font-size: 2rem;
+      box-shadow: 0 2px 8px rgba(33,150,243,0.18);
+      cursor: pointer;
+      opacity: 0.85;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.2s, background 0.2s;
+    }
+    .scroll-to-top-btn:hover, .scroll-to-top-btn:focus {
+      opacity: 1;
+      background: #1976d2;
+      outline: none;
+    }
+    .darkmode .scroll-to-top-btn {
+      background: #4fc3f7;
+      color: #23272b;
+    }
+    .darkmode .scroll-to-top-btn:hover, .darkmode .scroll-to-top-btn:focus {
+      background: #0288d1;
+      color: #fff;
+    }
+    @media (max-width: 600px) {
+      .scroll-to-top-btn {
+        right: 1rem;
+        bottom: 1rem;
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -78,12 +203,52 @@
   </nav>
   <main>
     <section class="card">
-      <h2>Über uns</h2>
-      <p>Lerne unser Team kennen und wie ParadiseNetwork entstanden ist.</p>
-      <!-- Teamvorstellung, Geschichte, Werte etc. -->
+      <h2>👥 Über uns</h2>
+      <div class="about-info-box">
+        <b>Pasadise Network – Ein Server von Spielern, für Spieler.</b><br>
+        Pasadise Network ist weit mehr als nur ein Minecraft-Freebuildserver – wir sind eine wachsende, kreative Community mit dem Ziel, einen Ort zu schaffen, an dem sich Spieler aller Altersgruppen wohlfühlen, austauschen und langfristig verwirklichen können.<br><br>
+        Gegründet wurde der Server aus dem Wunsch heraus, eine echte Alternative zu überladenen, kommerziellen Minecraft-Servern zu schaffen. Statt Pay-to-Win, Rangkämpfe und toxischem Verhalten findest du bei uns eine freundliche Atmosphäre, faire Regeln und vor allem: kreative Freiheit.
+      </div>
+      <div class="about-info-box vision">
+        <b>🎯 Unsere Vision</b><br>
+        Unsere Idee ist einfach:
+        <ul>
+          <li>🧱 Ein Ort, an dem du bauen kannst, was du willst.</li>
+          <li>🤝 Eine Community, in der jeder respektiert wird.</li>
+          <li>🔧 Ein Server, der sich mit seinen Spielern weiterentwickelt.</li>
+        </ul>
+        Pasadise steht für Zusammenhalt, Transparenz und Offenheit. Wir wollen keinen 08/15-Server, sondern ein lebendiges Projekt, das durch seine Spieler mitgestaltet wird.
+      </div>
+      <div class="about-info-box team">
+        <b>🧑‍💻 Wer steckt dahinter?</b><br>
+        Hinter Pasadise Network steht ein kleines, aber engagiertes Team aus Minecraft-Fans mit Erfahrung in Servertechnik, Community-Management und kreativem Weltenbau. Alles, was wir machen, machen wir mit Leidenschaft – ehrenamtlich und aus Überzeugung.<br>
+        <br>
+        Unser Team kümmert sich um:
+        <ul>
+          <li>Serverpflege & technische Weiterentwicklung</li>
+          <li>Schutz vor Griefing & Hilfe bei Problemen</li>
+          <li>Eventplanung & kreative Impulse</li>
+          <li>Feedback der Community – und dessen Umsetzung</li>
+        </ul>
+      </div>
+      <div class="about-info-box community">
+        <b>🧑‍🤝‍🧑 Unsere Community</b><br>
+        Was Pasadise wirklich besonders macht, sind die Menschen, die hier spielen. Unsere Community besteht aus Spielern verschiedenster Altersgruppen, die gemeinsam bauen, Ideen teilen und sich gegenseitig helfen. Neue Spieler werden herzlich aufgenommen, und respektvoller Umgang ist für uns selbstverständlich.<br>
+        <br>
+        Wir fördern freundliche Interaktion, Zusammenarbeit bei Bauprojekten und Eigeninitiative. Wer Lust hat, kann sich aktiv einbringen – zum Beispiel durch Community-Events, Stadtprojekte oder Feedbackrunden.
+      </div>
+      <div class="about-info-box participate">
+        <b>💬 Mitmachen & Mitgestalten</b><br>
+        Bei uns bist du nicht einfach nur „Spieler“ – du bist Teil des Projekts. Deine Ideen sind willkommen, deine Meinung zählt.<br>
+        Ob als Architekt, Technik-Fan, Redstone-Genie oder einfach als Entdecker: Bei Pasadise findest du deinen Platz.
+      </div>
+      <div style="color:#388e3c; font-weight:bold; font-size:1.08rem; margin-bottom:2.2rem;">
+        Danke, dass du Teil dieser Welt bist – oder es bald wirst.<br>
+        💚 Pasadise Network – gemeinsam kreativ.
+      </div>
     </section>
 
-    <section class="card" style="text-align:center;">
+    <section class="card">
       <h2>Unser Team</h2>
       <div class="team-list">
         <div class="team-member">
@@ -119,15 +284,16 @@
       </div>
     </section>
     <!-- ...weitere Abschnitte wie Geschichte, Werte etc... -->
-    <section class="card">
+    <section class="card" style="cursor:pointer;" onclick="window.location.href='geschichte.html'" tabindex="0" onkeydown="if(event.key==='Enter'){window.location.href='geschichte.html'}">
       <h2>Die Geschichte von ParadiseNetwork</h2>
-      <p>Hier steht bald die Sagen umwobene Geschichte von ParadiseNetwork...</p>
+      <p style="color:#888;">Hier steht bald die Sagen umwobene Geschichte von ParadiseNetwork...</p>
       <!-- Teamvorstellung, Geschichte, Werte etc. -->
     </section>
   </main>
   <footer>
     <p>© 2025 ParadiseNetwork.us – Ein Projekt für die Community</p>
   </footer>
+  <button class="scroll-to-top-btn" id="scrollToTopBtn" aria-label="Nach oben"><span style="pointer-events:none;">↑</span></button>
   <script>
     // Darkmode persistent über localStorage
     function toggleDarkMode() {
@@ -176,6 +342,19 @@
     });
     window.addEventListener('resize', closeNavOnResize);
     window.addEventListener('DOMContentLoaded', closeNavOnResize);
+
+    // Scroll-to-top Button
+    const scrollBtn = document.getElementById('scrollToTopBtn');
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 200) {
+        scrollBtn.style.display = 'flex';
+      } else {
+        scrollBtn.style.display = 'none';
+      }
+    });
+    scrollBtn.addEventListener('click', function() {
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    });
   </script>
 </body>
 </html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vote – ParadiseNetwork.us</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .vote-section {
+      max-width: 900px;
+      margin: 2.5rem auto 2rem auto;
+      padding: 0 1rem;
+      text-align: center;
+    }
+    .vote-title {
+      font-size: 2.1rem;
+      font-weight: 900;
+      color: #1976d2;
+      margin-bottom: 2rem;
+      letter-spacing: 0.04em;
+      text-shadow: 0 2px 8px rgba(33,150,243,0.10);
+      text-transform: uppercase;
+    }
+    .darkmode .vote-title {
+      color: #90caf9;
+      text-shadow: 0 2px 8px rgba(33,150,243,0.18);
+    }
+    .vote-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      margin-top: 2.5rem;
+    }
+    .vote-link-card {
+      background: #f5fafd;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(33,150,243,0.08);
+      padding: 2rem 2.2rem 1.5rem 2.2rem;
+      min-width: 220px;
+      max-width: 320px;
+      text-align: center;
+      transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+      border-top: 5px solid #2196f3;
+      font-size: 1.13rem;
+      font-weight: 500;
+      color: #23272b;
+      position: relative;
+    }
+    .vote-link-card:hover, .vote-link-card:focus {
+      background: #e3f2fd;
+      box-shadow: 0 4px 18px rgba(33,150,243,0.13);
+      transform: translateY(-3px) scale(1.03);
+      outline: none;
+    }
+    .darkmode .vote-link-card {
+      background: #23272b;
+      color: #e3f2fd;
+      box-shadow: 0 2px 16px rgba(33,150,243,0.13);
+    }
+    .darkmode .vote-link-card:hover, .darkmode .vote-link-card:focus {
+      background: #26334a;
+    }
+    @media (max-width: 600px) {
+      .vote-title { font-size: 1.3rem; }
+      .vote-link-card { padding: 1.2rem 0.7rem; font-size: 1rem; }
+      .vote-links { gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <button class="toggle-btn" onclick="toggleDarkMode()">🌙</button>
+  <button class="hamburger" id="hamburger" aria-label="Navigation öffnen/schließen">
+    <span></span>
+  </button>
+  <header>
+    <h1>Willkommen zu ParadiseNetwork</h1>
+    <p>Dein Deutscher Minecraft Freebuild Server – ParadiseNetwork.us</p>
+  </header>
+  <nav id="mainNav" class="collapsed">
+    <a href="index.html">Startseite</a>
+    <a href="infos.html">Infos</a>
+    <a href="ueber-uns.html">Über uns</a>
+    <a href="galerie.html">Galerie</a>
+    <a href="guides.html">Guides & Hilfe</a>
+    <a href="events.html">Events</a>
+    <a href="karte.html">Karte</a>
+    <a href="bewerben.html">Bewerben</a>
+    <a href="creator.html">Content Creator</a>
+    <a href="social.html">Social Media</a>
+    <a href="raenge.html">Ränge</a>
+    <a href="vote.html">Vote</a>
+  </nav>
+  <main>
+    <section class="vote-section card">
+      <h2 class="vote-title">Vote für ParadiseNetwork</h2>
+      <p>Unterstütze unseren Server mit deiner Stimme!<br>Jede Stimme hilft, unsere Community zu stärken.</p>
+      <div class="vote-links">
+        <div class="vote-link-card">
+          <strong>Vote-Link 1</strong><br>
+          <a href="#" target="_blank">[Bald verfügbar]</a>
+        </div>
+        <div class="vote-link-card">
+          <strong>Vote-Link 2</strong><br>
+          <a href="#" target="_blank">[Bald verfügbar]</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>© 2025 ParadiseNetwork.us – Ein Projekt für die Community</p>
+  </footer>
+  <script>
+    // Darkmode persistent über localStorage
+    function toggleDarkMode() {
+      document.body.classList.toggle('darkmode');
+      if (document.body.classList.contains('darkmode')) {
+        localStorage.setItem('darkmode', '1');
+      } else {
+        localStorage.setItem('darkmode', '0');
+      }
+    }
+    if (localStorage.getItem('darkmode') === '1') {
+      document.body.classList.add('darkmode');
+    }
+    // Responsive Navigation
+    const hamburger = document.getElementById('hamburger');
+    const nav = document.getElementById('mainNav');
+    function closeNavOnResize() {
+      if (window.innerWidth > 900) {
+        nav.classList.remove('expanded');
+        nav.classList.remove('collapsed');
+        hamburger.classList.remove('active');
+      } else {
+        nav.classList.add('collapsed');
+        nav.classList.remove('expanded');
+        hamburger.classList.remove('active');
+      }
+    }
+    hamburger.addEventListener('click', function() {
+      if (nav.classList.contains('expanded')) {
+        nav.classList.remove('expanded');
+        nav.classList.add('collapsed');
+        hamburger.classList.remove('active');
+      } else {
+        nav.classList.add('expanded');
+        nav.classList.remove('collapsed');
+        hamburger.classList.add('active');
+      }
+    });
+    nav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 900) {
+          nav.classList.remove('expanded');
+          nav.classList.add('collapsed');
+          hamburger.classList.remove('active');
+        }
+      });
+    });
+    window.addEventListener('resize', closeNavOnResize);
+    window.addEventListener('DOMContentLoaded', closeNavOnResize);
+  </script>
+</body>
+</html>

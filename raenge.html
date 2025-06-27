@@ -33,6 +33,7 @@
       padding: 2rem 1.5rem 1.5rem 1.5rem;
       text-align: center;
       position: relative;
+      overflow: hidden;
       border-top: 5px solid #2196f3;
       transition: box-shadow 0.2s;
       color: #23272b;
@@ -138,6 +139,38 @@
       60% { transform: translateX(120%) skewX(-20deg); opacity: 1; }
       100% { transform: translateX(120%) skewX(-20deg); opacity: 0.7; }
     }
+    .rank-box-glitter {
+      pointer-events: none;
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      z-index: 3;
+      background: transparent;
+      animation: glitter-fade 2.5s linear infinite;
+    }
+    @keyframes glitter-fade {
+      0%, 100% { opacity: 0.18; }
+      50% { opacity: 0.38; }
+    }
+    .rank-box-glitter span {
+      position: absolute;
+      display: block;
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.7);
+      box-shadow: 0 0 8px 2px #fff8, 0 0 2px 0 #fff;
+      opacity: 0.7;
+      animation: glitter-move 3.5s linear infinite;
+    }
+    .rank-box-glitter span:nth-child(1) { top: 18%; left: 22%; animation-delay: 0s; }
+    .rank-box-glitter span:nth-child(2) { top: 35%; left: 70%; animation-delay: 1.2s; }
+    .rank-box-glitter span:nth-child(3) { top: 60%; left: 40%; animation-delay: 2.1s; }
+    .rank-box-glitter span:nth-child(4) { top: 80%; left: 80%; animation-delay: 0.7s; }
+    .rank-box-glitter span:nth-child(5) { top: 55%; left: 15%; animation-delay: 1.7s; }
+    .rank-box-glitter span:nth-child(6) { top: 75%; left: 60%; animation-delay: 2.7s; }
+    @keyframes glitter-move {
+      0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.7; }
+      50% { transform: scale(1.5) rotate(20deg); opacity: 1; }
+    }
     @media (max-width: 600px) {
       .ranks-title { font-size: 1.3rem; }
       .rank-box { padding: 1.2rem 0.7rem; }
@@ -169,11 +202,15 @@
     <a href="creator.html">Content Creator</a>
     <a href="social.html">Social Media</a>
     <a href="raenge.html">Ränge</a>
+    <a href="vote.html">Vote</a>
   </nav>
   <main>
     <section class="card" style="text-align:center; position:relative; max-width:900px; margin:2.5rem auto 2rem auto;">
       <h2 class="ranks-title">Unsere Ränge</h2>
       <div class="rank-box lotus">
+        <span class="rank-box-glitter">
+          <span></span><span></span><span></span><span></span><span></span><span></span>
+        </span>
         <span class="rank-img-wrapper">
           <img src="bild/rang/lotus_rang.png" alt="Lotus Rang" class="rank-img" />
           <span class="rank-img-shine"></span>
@@ -182,6 +219,9 @@
         <div class="rank-desc">Beschreibung folgt ...</div>
       </div>
       <div class="rank-box viper">
+        <span class="rank-box-glitter">
+          <span></span><span></span><span></span><span></span><span></span><span></span>
+        </span>
         <span class="rank-img-wrapper">
           <img src="bild/rang/viper_rang.png" alt="Viper Rang" class="rank-img" />
           <span class="rank-img-shine"></span>
@@ -190,6 +230,9 @@
         <div class="rank-desc">Beschreibung folgt ...</div>
       </div>
       <div class="rank-box vulkan">
+        <span class="rank-box-glitter">
+          <span></span><span></span><span></span><span></span><span></span><span></span>
+        </span>
         <span class="rank-img-wrapper">
           <img src="bild/rang/vulkan_rang.png" alt="Vulkan Rang" class="rank-img" />
           <span class="rank-img-shine"></span>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ParadiseNetwork – Ränge</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background: #f7fafd;
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+    }
+    .ranks-title {
+      text-align: center;
+      font-size: 2.2rem;
+      font-weight: 900;
+      margin-bottom: 2.2rem;
+      color: #1565c0;
+      letter-spacing: 0.04em;
+      text-shadow: 0 2px 8px rgba(33,150,243,0.10);
+      text-transform: uppercase;
+    }
+    .darkmode .ranks-title {
+      color: #90caf9;
+      text-shadow: 0 2px 8px rgba(33,150,243,0.18);
+    }
+    .rank-box {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 2px 12px rgba(33,150,243,0.08);
+      margin-bottom: 2rem;
+      padding: 2rem 1.5rem 1.5rem 1.5rem;
+      text-align: center;
+      position: relative;
+      border-top: 5px solid #2196f3;
+      transition: box-shadow 0.2s;
+      color: #23272b;
+    }
+    .rank-box.lotus {
+      border-top-color: #8bc34a;
+      background: linear-gradient(135deg, #e8f5e9 60%, #f7fafd 100%);
+    }
+    .rank-box.viper {
+      border-top-color: #ff9800;
+      background: linear-gradient(135deg, #fff3e0 60%, #f7fafd 100%);
+    }
+    .rank-box.vulkan {
+      border-top-color: #e53935;
+      background: linear-gradient(135deg, #ffebee 60%, #f7fafd 100%);
+    }
+    .darkmode .rank-box.lotus {
+      background: linear-gradient(135deg, #263d2b 60%, #23272b 100%);
+      border-top-color: #aed581;
+    }
+    .darkmode .rank-box.viper {
+      background: linear-gradient(135deg, #4e2e0e 60%, #23272b 100%);
+      border-top-color: #ffb74d;
+    }
+    .darkmode .rank-box.vulkan {
+      background: linear-gradient(135deg, #4b2323 60%, #23272b 100%);
+      border-top-color: #ef9a9a;
+    }
+    .rank-name {
+      font-size: 1.5rem;
+      font-weight: 900;
+      margin-bottom: 0.7rem;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: #388e3c;
+    }
+    .rank-box.viper .rank-name {
+      color: #ef6c00;
+    }
+    .rank-box.vulkan .rank-name {
+      color: #c62828;
+    }
+    .darkmode .rank-box.lotus .rank-name {
+      color: #b9f6ca;
+    }
+    .darkmode .rank-box.viper .rank-name {
+      color: #ffd180;
+    }
+    .darkmode .rank-box.vulkan .rank-name {
+      color: #ff8a80;
+    }
+    .rank-desc {
+      font-size: 1.13rem;
+      color: #2e3a3f;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+    }
+    .darkmode .rank-desc {
+      color: #e3f2fd;
+    }
+    .rank-img-wrapper {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      max-width: 120px;
+      aspect-ratio: 1/1;
+      overflow: hidden;
+      vertical-align: middle;
+    }
+    .rank-img {
+      display: block;
+      margin: 0 auto 1rem auto;
+      max-width: 100%;
+      width: 100%;
+      height: 100%;
+      border-radius: 0;
+      box-shadow: none;
+      background: none;
+      position: relative;
+      z-index: 1;
+      object-fit: contain;
+      aspect-ratio: 1/1;
+    }
+    .rank-img-shine {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      pointer-events: none;
+      border-radius: inherit;
+      z-index: 2;
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(120deg, rgba(255,255,255,0.0) 0%, rgba(255,255,255,0.55) 45%, rgba(255,255,255,0.0) 80%);
+      transform: translateX(-120%) skewX(-20deg);
+      animation: shiny-move 4.5s cubic-bezier(.4,.7,.7,1) infinite;
+      will-change: transform, opacity;
+      pointer-events: none;
+    }
+    @keyframes shiny-move {
+      0% { transform: translateX(-120%) skewX(-20deg); opacity: 0.7; }
+      10% { opacity: 1; }
+      60% { transform: translateX(120%) skewX(-20deg); opacity: 1; }
+      100% { transform: translateX(120%) skewX(-20deg); opacity: 0.7; }
+    }
+    @media (max-width: 600px) {
+      .ranks-title { font-size: 1.3rem; }
+      .rank-box { padding: 1.2rem 0.7rem; }
+      .rank-name { font-size: 1.1rem; }
+      .rank-desc { font-size: 0.98rem; }
+      .rank-img-wrapper { max-width: 70px; }
+      .rank-img { max-width: 70px; margin-bottom: 0.7rem; }
+    }
+  </style>
+</head>
+<body>
+  <button class="toggle-btn" onclick="toggleDarkMode()">🌙</button>
+  <button class="hamburger" id="hamburger" aria-label="Navigation öffnen/schließen">
+    <span></span>
+  </button>
+  <header>
+    <h1>Willkommen zu ParadiseNetwork</h1>
+    <p>Dein Deutscher Minecraft Freebuild Server – ParadiseNetwork.us</p>
+  </header>
+  <nav id="mainNav" class="collapsed">
+    <a href="index.html">Startseite</a>
+    <a href="infos.html">Infos</a>
+    <a href="ueber-uns.html">Über uns</a>
+    <a href="galerie.html">Galerie</a>
+    <a href="guides.html">Guides & Hilfe</a>
+    <a href="events.html">Events</a>
+    <a href="karte.html">Karte</a>
+    <a href="bewerben.html">Bewerben</a>
+    <a href="creator.html">Content Creator</a>
+    <a href="social.html">Social Media</a>
+    <a href="raenge.html">Ränge</a>
+  </nav>
+  <main>
+    <section class="card" style="text-align:center; position:relative; max-width:900px; margin:2.5rem auto 2rem auto;">
+      <h2 class="ranks-title">Unsere Ränge</h2>
+      <div class="rank-box lotus">
+        <span class="rank-img-wrapper">
+          <img src="bild/rang/lotus_rang.png" alt="Lotus Rang" class="rank-img" />
+          <span class="rank-img-shine"></span>
+        </span>
+        <div class="rank-name">Lotus</div>
+        <div class="rank-desc">Beschreibung folgt ...</div>
+      </div>
+      <div class="rank-box viper">
+        <span class="rank-img-wrapper">
+          <img src="bild/rang/viper_rang.png" alt="Viper Rang" class="rank-img" />
+          <span class="rank-img-shine"></span>
+        </span>
+        <div class="rank-name">Viper</div>
+        <div class="rank-desc">Beschreibung folgt ...</div>
+      </div>
+      <div class="rank-box vulkan">
+        <span class="rank-img-wrapper">
+          <img src="bild/rang/vulkan_rang.png" alt="Vulkan Rang" class="rank-img" />
+          <span class="rank-img-shine"></span>
+        </span>
+        <div class="rank-name">Vulkan</div>
+        <div class="rank-desc">Beschreibung folgt ...</div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>© 2025 ParadiseNetwork.us – Ein Projekt für die Community</p>
+  </footer>
+  <script>
+    // Darkmode persistent über localStorage
+    function toggleDarkMode() {
+      document.body.classList.toggle('darkmode');
+      if (document.body.classList.contains('darkmode')) {
+        localStorage.setItem('darkmode', '1');
+      } else {
+        localStorage.setItem('darkmode', '0');
+      }
+    }
+    if (localStorage.getItem('darkmode') === '1') {
+      document.body.classList.add('darkmode');
+    }
+    // Responsive Navigation
+    const hamburger = document.getElementById('hamburger');
+    const nav = document.getElementById('mainNav');
+    function closeNavOnResize() {
+      if (window.innerWidth > 900) {
+        nav.classList.remove('expanded');
+        nav.classList.remove('collapsed');
+        hamburger.classList.remove('active');
+      } else {
+        nav.classList.add('collapsed');
+        nav.classList.remove('expanded');
+        hamburger.classList.remove('active');
+      }
+    }
+    hamburger.addEventListener('click', function() {
+      if (nav.classList.contains('expanded')) {
+        nav.classList.remove('expanded');
+        nav.classList.add('collapsed');
+        hamburger.classList.remove('active');
+      } else {
+        nav.classList.add('expanded');
+        nav.classList.remove('collapsed');
+        hamburger.classList.add('active');
+      }
+    });
+    nav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 900) {
+          nav.classList.remove('expanded');
+          nav.classList.add('collapsed');
+          hamburger.classList.remove('active');
+        }
+      });
+    });
+    window.addEventListener('resize', closeNavOnResize);
+    window.addEventListener('DOMContentLoaded', closeNavOnResize);
+  </script>
+</body>
+</html>

@@ -49,6 +49,80 @@
         font-size: 1.5rem;
       }
     }
+    .wiki-btn {
+      display: inline-block;
+      padding: 0.65em 1.5em;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #fff;
+      background: linear-gradient(90deg, #2196f3 0%, #4fc3f7 100%);
+      border: none;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(33,150,243,0.10);
+      text-decoration: none;
+      transition: background 0.2s, box-shadow 0.2s, color 0.2s, transform 0.1s;
+      margin-bottom: 1.2rem;
+      margin-top: 0.7rem;
+      letter-spacing: 0.01em;
+      outline: none;
+      cursor: pointer;
+      line-height: 1.2;
+      position: relative;
+      overflow: hidden;
+    }
+    .wiki-btn::before {
+      content: "··· ✦ ··· ✦ ··· ✦ ··· ";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      color: rgba(255,255,255,0.13);
+      font-size: 1.3em;
+      letter-spacing: 0.2em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+      z-index: 0;
+      user-select: none;
+    }
+    .wiki-btn span, .wiki-btn {
+      position: relative;
+      z-index: 1;
+    }
+    .wiki-btn:hover, .wiki-btn:focus {
+      background: linear-gradient(90deg, #1976d2 0%, #0288d1 100%);
+      color: #fff;
+      box-shadow: 0 4px 16px rgba(33,150,243,0.16);
+      transform: translateY(-2px) scale(1.03);
+    }
+    .darkmode .wiki-btn {
+      background: linear-gradient(90deg, #4fc3f7 0%, #2196f3 100%);
+      color: #23272b;
+    }
+    .darkmode .wiki-btn:hover, .darkmode .wiki-btn:focus {
+      background: linear-gradient(90deg, #0288d1 0%, #1976d2 100%);
+      color: #fff;
+    }
+    .hero-title {
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+      word-break: break-word;
+      line-height: 1.15;
+      letter-spacing: 0.01em;
+      font-weight: 800;
+      text-shadow: 0 2px 8px rgba(33,150,243,0.08);
+    }
+    @media (max-width: 600px) {
+      .hero-title {
+        font-size: 1.35rem;
+        padding: 0 0.2em;
+        line-height: 1.2;
+        text-align: center;
+        word-break: break-word;
+      }
+    }
     /* ...existing code... */
   </style>
 </head>
@@ -78,7 +152,7 @@
   <main>
     <!-- HERO SECTION -->
     <section class="card" style="text-align:center; position:relative;">
-      <h2 style="font-size:2.2rem; margin-bottom:0.5rem;">Willkommen auf ParadiseNetwork.us</h2>
+      <h2 class="hero-title">Willkommen auf ParadiseNetwork.us</h2>
       <p style="font-size:1.2rem; margin-bottom:1.5rem;">
         ParadiseNetwork ist dein moderner deutscher Minecraft Freebuild Server für Java!<br>
         Baue, handle, erlebe Abenteuer und werde Teil der ParadiseFamily.
@@ -99,11 +173,16 @@
           <span style="vertical-align:middle;">Discord beitreten</span>
         </a>
       </div>
-      <div>
-        <a href="https://corotexus-developement.github.io/ParadiseNetworkWiki/index.html" target="_blank" style="display:inline-block; margin-bottom:1.2rem; font-weight:bold; color:#2a7ae2; text-decoration:underline;">Zum ParadiseNetwork-Wiki</a>
-      </div>
       <div style="margin-top:2rem;">
         <img src="bild/paradi_tower.png" alt="ParadiseNetwork Titelscreen" style="max-width:100%; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+      </div>
+      <div>
+        <p>Die Bibliothek für alles was du brauchst findest du in unserem WIKI</p>
+      </div>
+      <div>
+        <a href="https://corotexus-developement.github.io/ParadiseNetworkWiki/index.html" target="_blank" class="wiki-btn">
+          ParadiseNetwork-Wiki
+        </a>
       </div>
     </section>
 

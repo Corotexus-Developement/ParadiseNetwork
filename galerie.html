@@ -75,18 +75,22 @@
       left: 0; top: 0; right: 0; bottom: 0;
       background: rgba(0,0,0,0.85);
       justify-content: center;
-      align-items: center;
+      align-items: flex-start;
       flex-direction: column;
+      padding-top: 4vh;
     }
     .lightbox.active {
       display: flex;
     }
     .lightbox img {
-      max-width: 90vw;
-      max-height: 80vh;
+      max-width: 60vw;
+      max-height: 60vh;
       border-radius: 10px;
       box-shadow: 0 4px 24px rgba(0,0,0,0.5);
       margin-bottom: 1rem;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
     }
     .lightbox-close {
       position: absolute;
@@ -103,29 +107,78 @@
     .lightbox-nav {
       display: flex;
       justify-content: center;
-      gap: 2rem;
-      margin-bottom: 1rem;
+      gap: 1.2rem;
+      margin-bottom: 0.5rem;
+      margin-top: 0.2rem;
+      width: 100%;
     }
     .lightbox-nav button {
       background: #222;
       color: #fff;
       border: none;
       border-radius: 50%;
-      width: 48px;
-      height: 48px;
-      font-size: 2rem;
+      width: 38px;
+      height: 38px;
+      font-size: 1.4rem;
       cursor: pointer;
       opacity: 0.8;
       transition: opacity 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     .lightbox-nav button:hover {
       opacity: 1;
       background: var(--primary);
       color: #fff;
     }
+    .lightbox-info {
+      background: rgba(30,30,30,0.85);
+      color: #fff;
+      border-radius: 8px;
+      padding: 0.5rem 0.9rem 0.5rem 0.9rem;
+      margin-top: 0.2rem;
+      max-width: 60vw;
+      min-width: 120px;
+      box-sizing: border-box;
+      font-size: 0.98rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+      align-items: flex-start;
+      word-break: break-word;
+    }
+    .lightbox-title {
+      font-weight: bold;
+      font-size: 1em;
+      margin-bottom: 0.05em;
+    }
+    .lightbox-author {
+      font-size: 0.93em;
+      color: #b3e5fc;
+      margin-bottom: 0.05em;
+    }
+    .lightbox-desc {
+      font-size: 0.93em;
+      color: #eee;
+      margin-bottom: 0;
+    }
+    @media (max-width: 900px) {
+      .lightbox img { max-width: 90vw; max-height: 50vh; }
+      .lightbox-info { max-width: 90vw; font-size: 0.95rem; }
+    }
     @media (max-width: 700px) {
       .gallery-folder-content { padding: 1rem; }
       .gallery-images img { max-width: 70px; max-height: 50px; }
+      .lightbox-info {
+        font-size: 0.91rem;
+        padding: 0.4rem 0.5rem;
+        max-width: 98vw;
+      }
+      .lightbox-title { font-size: 1em; }
+      .lightbox-author, .lightbox-desc { font-size: 0.89em; }
+      .lightbox img { max-width: 98vw; max-height: 40vh; }
     }
     .darkmode .gallery-folder { background: #23272b; }
     .darkmode .gallery-folder-header { background: #23272b; color: #fff; }
@@ -285,61 +338,40 @@
     </section>
 
     <div class="gallery-folder-list">
-      <div class="gallery-folder" data-folder="galerie-1">
+      <div class="gallery-folder" data-folder="galerie-server">
         <button class="gallery-folder-header" type="button">
-          <span>Galerie 1</span>
+          <span>Server</span>
           <span class="arrow">&#9654;</span>
         </button>
         <div class="gallery-folder-content">
           <div class="gallery-images">
-            <img src="bild/paradi_tower.png" alt="Startbild 1" data-folder="galerie-1">
-            <img src="bild/paradi_plant.png" alt="Startbild 2" data-folder="galerie-1">
-            <img src="bild/paradi_gunter.png" alt="Startbild 3" data-folder="galerie-1">
-            <img src="bild/paradi_tower.png" alt="Startbild 4" data-folder="galerie-1">
-            <img src="bild/paradi_plant.png" alt="Startbild 5" data-folder="galerie-1">
-            <img src="bild/paradi_gunter.png" alt="Startbild 6" data-folder="galerie-1">
-            <img src="bild/paradi_tower.png" alt="Startbild 7" data-folder="galerie-1">
-            <img src="bild/paradi_plant.png" alt="Startbild 8" data-folder="galerie-1">
-            <img src="bild/paradi_gunter.png" alt="Startbild 9" data-folder="galerie-1">
-            <img src="bild/paradi_tower.png" alt="Startbild 10" data-folder="galerie-1">
-            <img src="bild/paradi_plant.png" alt="Startbild 11" data-folder="galerie-1">
-            <img src="bild/paradi_gunter.png" alt="Startbild 12" data-folder="galerie-1">
-            <img src="bild/paradi_tower.png" alt="Startbild 13" data-folder="galerie-1">
-            <img src="bild/paradi_plant.png" alt="Startbild 14" data-folder="galerie-1">
-            <img src="bild/paradi_gunter.png" alt="Startbild 15" data-folder="galerie-1">
-            <img src="bild/paradi_tower.png" alt="Startbild 16" data-folder="galerie-1">
-            <img src="bild/paradi_plant.png" alt="Startbild 17" data-folder="galerie-1">
-            <img src="bild/paradi_gunter.png" alt="Startbild 18" data-folder="galerie-1">
-            <img src="bild/paradi_tower.png" alt="Startbild 19" data-folder="galerie-1">
-            <img src="bild/paradi_plant.png" alt="Startbild 20" data-folder="galerie-1">
-            <img src="bild/paradi_gunter.png" alt="Startbild 21" data-folder="galerie-1">
-            <img src="bild/paradi_tower.png" alt="Startbild 22" data-folder="galerie-1">
-            <img src="bild/paradi_plant.png" alt="Startbild 23" data-folder="galerie-1">
-            <img src="bild/paradi_gunter.png" alt="Startbild 24" data-folder="galerie-1">
+            <img src="bild/paradi_tower.png" alt="" data-folder="galerie-server" data-title="Ein Haus am Spawn" data-author="Bild von Corotexus" data-desc="Der Heilige Paradise Tower">
+            <img src="bild/paradi_plant.png" alt="" data-folder="galerie-server" data-title="Pflanzenparadies" data-author="Bild von Corotexus" data-desc="Einen Garten im Paradies. Natürlich mit Palme!">
+            <img src="bild/paradi_gunter.png" alt="" data-folder="galerie-server" data-title="Gunter's Turm" data-author="Bild von Corotexus" data-desc="Ausblick über die ganze Welt genießen und die Seele baumeln lassen.">
           </div>
         </div>
       </div>
-      <div class="gallery-folder" data-folder="galerie-2">
+      <div class="gallery-folder" data-folder="galerie-bauwerke">
         <button class="gallery-folder-header" type="button">
-          <span>Galerie 2</span>
+          <span>Bauwerke</span>
           <span class="arrow">&#9654;</span>
         </button>
         <div class="gallery-folder-content">
           <div class="gallery-images">
-            <img src="Bildplatz" alt="Bauwerk 1" data-folder="galerie-2">
-            <img src="Bildplatz" alt="Bauwerk 2" data-folder="galerie-2">
+            <img src="Bildplatz" alt="Frei" data-folder="galerie-bauwerke">
+            <img src="Bildplatz" alt="Frei" data-folder="galerie-bauwerke">
           </div>
         </div>
       </div>
       <div class="gallery-folder" data-folder="galerie-3">
         <button class="gallery-folder-header" type="button">
-          <span>Galerie 3</span>
+          <span>Events</span>
           <span class="arrow">&#9654;</span>
         </button>
         <div class="gallery-folder-content">
           <div class="gallery-images">
-            <img src="Bildplatz" alt="Event 1" data-folder="galerie-3">
-            <img src="Bildplatz" alt="Event 2" data-folder="galerie-3">
+            <img src="Bildplatz" alt="Frei" data-folder="galerie-events">
+            <img src="Bildplatz" alt="Frei" data-folder="galerie-events">
           </div>
         </div>
       </div>
@@ -354,6 +386,11 @@
       </div>
       <img id="lightbox-img" src="" alt="Screenshot">
       <div id="lightbox-caption" style="color:#fff; margin-top:0.5rem;"></div>
+      <div class="lightbox-info" id="lightbox-info" style="display:none;">
+        <div id="lightbox-title" class="lightbox-title"></div>
+        <div id="lightbox-author" class="lightbox-author"></div>
+        <div id="lightbox-desc" class="lightbox-desc"></div>
+      </div>
     </div>
 
     <button class="scroll-to-top-btn" id="scrollToTopBtn" aria-label="Nach oben"><span style="pointer-events:none;">↑</span></button>
@@ -443,9 +480,38 @@
       const img = galleryImages[currentIndex];
       const lightboxImg = document.getElementById('lightbox-img');
       const caption = document.getElementById('lightbox-caption');
+      const infoBox = document.getElementById('lightbox-info');
+      const title = document.getElementById('lightbox-title');
+      const author = document.getElementById('lightbox-author');
+      const desc = document.getElementById('lightbox-desc');
       lightboxImg.src = img.src;
       lightboxImg.alt = img.alt;
       caption.textContent = img.alt || '';
+
+      // Titel, Autor, Beschreibung setzen und nur anzeigen, wenn vorhanden
+      let hasInfo = false;
+      if (img.getAttribute('data-title')) {
+        title.textContent = img.getAttribute('data-title');
+        title.style.display = '';
+        hasInfo = true;
+      } else {
+        title.style.display = 'none';
+      }
+      if (img.getAttribute('data-author')) {
+        author.textContent = img.getAttribute('data-author');
+        author.style.display = '';
+        hasInfo = true;
+      } else {
+        author.style.display = 'none';
+      }
+      if (img.getAttribute('data-desc')) {
+        desc.textContent = img.getAttribute('data-desc');
+        desc.style.display = '';
+        hasInfo = true;
+      } else {
+        desc.style.display = 'none';
+      }
+      infoBox.style.display = hasInfo ? 'flex' : 'none';
     }
 
     function closeLightbox(event) {

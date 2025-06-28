@@ -89,7 +89,8 @@
                 <td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td>
               </tr>
               <tr>
-                <td class="event-mc-day" title="Server Release">28</td><td>29</td><td>30</td><td>31</td><td></td><td></td><td></td>
+                <td class="event-mc-day" title="Server Release" data-event-title="Server Release" data-event-desc="Feiere mit uns den offiziellen Release von ParadiseNetwork! Der perfekte Zeitpunkt, schon von Beginn an dabei zu sein!">28</td>
+                <td>29</td><td>30</td><td>31</td><td></td><td></td><td></td>
               </tr>
             </tbody>
           </table>
@@ -131,6 +132,14 @@
     <p>© 2025 ParadiseNetwork.us – Ein Projekt für die Community</p>
   </footer>
   <button class="scroll-to-top-btn" id="scrollToTopBtn" aria-label="Nach oben"><span style="pointer-events:none;">↑</span></button>
+  <!-- Event-Info Modal -->
+  <div id="eventModal" class="event-modal" style="display:none;">
+    <div class="event-modal-content">
+      <span class="event-modal-close" id="eventModalClose" tabindex="0" aria-label="Schließen">&times;</span>
+      <h4 id="eventModalTitle"></h4>
+      <p id="eventModalDesc"></p>
+    </div>
+  </div>
   <script>
     // Darkmode persistent über localStorage
     function toggleDarkMode() {
@@ -191,6 +200,24 @@
     scrollBtn.addEventListener('click', function() {
       window.scrollTo({top: 0, behavior: 'smooth'});
     });
+    // Event-Modal für Kalender
+    document.querySelectorAll('.event-mc-day').forEach(function(td) {
+      td.style.cursor = 'pointer';
+      td.addEventListener('click', function(e) {
+        document.getElementById('eventModalTitle').textContent = td.getAttribute('data-event-title') || '';
+        document.getElementById('eventModalDesc').textContent = td.getAttribute('data-event-desc') || '';
+        document.getElementById('eventModal').style.display = 'flex';
+      });
+    });
+    document.getElementById('eventModalClose').addEventListener('click', function() {
+      document.getElementById('eventModal').style.display = 'none';
+    });
+    document.getElementById('eventModal').addEventListener('click', function(e) {
+      if (e.target === this) this.style.display = 'none';
+    });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === "Escape") document.getElementById('eventModal').style.display = 'none';
+    });
   </script>
   <style>
     /* ...existing code... */
@@ -235,6 +262,52 @@
         height: 40px;
         font-size: 1.5rem;
       }
+    }
+    .event-modal {
+      display: none;
+      position: fixed;
+      z-index: 10010;
+      left: 0; top: 0; width: 100vw; height: 100vh;
+      background: rgba(0,0,0,0.4);
+      align-items: center;
+      justify-content: center;
+    }
+    .event-modal[style*="display: flex"] {
+      display: flex !important;
+    }
+    .event-modal-content {
+      background: #fff;
+      padding: 2rem 1.5rem 1.5rem 1.5rem;
+      border-radius: 12px;
+      max-width: 350px;
+      width: 90vw;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+      position: relative;
+      animation: modalFadeIn 0.2s;
+    }
+    .event-modal-close {
+      position: absolute;
+      top: 0.7rem; right: 1rem;
+      font-size: 1.6rem;
+      color: #888;
+      cursor: pointer;
+      font-weight: bold;
+      transition: color 0.2s;
+    }
+    .event-modal-close:hover, .event-modal-close:focus {
+      color: #2196f3;
+      outline: none;
+    }
+    .darkmode .event-modal-content {
+      background: #23272b;
+      color: #fff;
+    }
+    .darkmode .event-modal-close {
+      color: #bbb;
+    }
+    @keyframes modalFadeIn {
+      from { transform: translateY(30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
     }
     /* ...existing code... */
   </style>

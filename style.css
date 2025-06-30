@@ -539,3 +539,40 @@ footer {
     font-size: 1.2rem;
   }
 }
+
+/* Social Links Anpassungen */
+.social-links-list {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+}
+.social-link-card {
+  background: #f9f9f9;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 0.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  color: var(--text-dark);
+  transition: background 0.3s, color 0.3s;
+  flex: 1 1 260px;
+  min-height: 220px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.social-link-card:hover {
+  background: var(--primary);
+  color: #fff;
+}
+@media (max-width: 900px) {
+  .social-link-card {
+    min-height: 180px;
+  }
+}
+@media (max-width: 600px) {
+  .social-link-card {
+    min-height: 140px;
+  }
+}

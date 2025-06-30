@@ -50,6 +50,7 @@
       gap: 0.7rem;
       justify-content: center;
       margin-top: 0.5rem;
+      flex-wrap: wrap;
     }
     .creator-link-btn {
       display: inline-block;
@@ -58,7 +59,8 @@
       color: #fff;
       font-weight: bold;
       text-decoration: none;
-      font-size: 1rem;
+      min-width: 90px;
+      text-align: center;
       transition: background 0.2s;
       border: none;
       cursor: pointer;
@@ -93,6 +95,17 @@
       }
       .creator-card .desc {
         font-size: 0.95rem;
+      }
+    }
+    @media (max-width: 500px) {
+      .creator-links {
+        flex-direction: column;
+        gap: 0.4rem;
+        align-items: stretch;
+      }
+      .creator-link-btn {
+        width: 100%;
+        min-width: unset;
       }
     }
     .darkmode .creator-card { background: #23272b; color: #fff; }
@@ -185,7 +198,7 @@
         <div class="creator-card">
           <img src="bild/team/leandost.png" alt="Leandost">
           <h3>Leandost</h3>
-          <div class="desc">Beschreibung</div>
+          <div class="desc">Beschreibung folgt...</div>
           <div class="creator-links">
             <a href="Noch Nichts" target="_blank" class="creator-link-btn youtube">YouTube</a>
             <a href="Noch Nichts" target="_blank" class="creator-link-btn tiktok">TikTok</a>

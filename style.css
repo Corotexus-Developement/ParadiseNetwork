@@ -143,6 +143,147 @@ nav a:focus {
     padding: 1rem 2rem;
     border-bottom: 1px solid rgba(255,255,255,0.08);
   }
+  .gallery-folder-list, .guide-accordion, .infos-section, .vote-section {
+    padding: 0 0.5rem;
+  }
+  .gallery-folder, .guide-section, .infos-box, .vote-link-card {
+    padding: 1rem 0.5rem;
+    margin-bottom: 1.2rem;
+    border-radius: 8px;
+    box-sizing: border-box;
+    max-width: 100%;
+  }
+  .team-list, .social-links-list {
+    flex-direction: column;
+    gap: 1.2rem;
+    align-items: stretch;
+  }
+  .team-member, .social-link-card {
+    min-width: unset;
+    max-width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 1rem 0.5rem;
+  }
+}
+
+/* RESPONSIVE: Grundlegende Anpassungen */
+@media (max-width: 900px) {
+  main {
+    padding: 1rem;
+  }
+  .card {
+    padding: 1rem 0.5rem;
+    margin-bottom: 1.2rem;
+  }
+  .feature-list {
+    gap: 0.7rem;
+  }
+  .feature-item {
+    min-width: unset;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: left;
+    font-size: 1rem;
+    padding: 0.8rem 1rem;
+    margin: 0 auto;
+  }
+  .gallery-folder-list, .guide-accordion, .infos-section, .vote-section {
+    padding: 0 0.5rem;
+  }
+  .gallery-folder, .guide-section, .infos-box, .vote-link-card {
+    padding: 1rem 0.5rem;
+    margin-bottom: 1.2rem;
+    border-radius: 8px;
+    box-sizing: border-box;
+    max-width: 100%;
+  }
+  .team-list, .social-links-list {
+    flex-direction: column;
+    gap: 1.2rem;
+    align-items: stretch;
+  }
+  .team-member, .social-link-card {
+    min-width: unset;
+    max-width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 1rem 0.5rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .gallery-folder-list, .guide-accordion, .infos-section, .vote-section {
+    padding: 0 0.2rem;
+  }
+  .gallery-folder, .guide-section, .infos-box, .vote-link-card {
+    padding: 0.7rem 0.2rem;
+    border-radius: 6px;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 0.98rem;
+  }
+  header h1 {
+    font-size: 1.3rem;
+  }
+  main {
+    padding: 0.5rem;
+  }
+  .card {
+    padding: 0.7rem 0.2rem;
+    border-radius: 6px;
+  }
+  .feature-list {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: stretch;
+  }
+  .feature-item {
+    min-width: unset;
+    width: 100%;
+    font-size: 0.95rem;
+    padding: 0.7rem 0.2rem;
+  }
+  .hero-title {
+    font-size: 1.1rem;
+    padding: 0 0.1em;
+  }
+  img, video {
+    max-width: 100%;
+    height: auto;
+  }
+  .hero-cta, .hero-discord, .wiki-btn {
+    font-size: 0.98rem;
+    padding: 0.5rem 1rem;
+  }
+  .gallery-folder-header, .guide-section-header, .infos-box h2, .vote-title {
+    font-size: 1.1rem;
+    padding: 0.7rem 0.2rem;
+  }
+  .team-member, .social-link-card {
+    padding: 0.7rem 0.2rem;
+    border-radius: 6px;
+  }
+  .team-member h3, .social-link-card h3 {
+    font-size: 1.05rem;
+  }
+}
+
+/* RESPONSIVE: Tabellen und Bilder */
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* RESPONSIVE: Footer */
+@media (max-width: 600px) {
+  footer {
+    font-size: 0.95rem;
+    padding: 0.7rem 0.2rem;
+  }
 }
 
 main {

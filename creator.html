@@ -69,9 +69,31 @@
     .creator-link-btn.youtube:hover { background: #cc0000; }
     .creator-link-btn.tiktok:hover { background: #222; }
     .creator-link-btn.twitch:hover { background: #772ce8; }
-    @media (max-width: 700px) {
-      .creator-list { flex-direction: column; gap: 1.2rem; }
-      .creator-card { min-width: unset; max-width: 100%; }
+    @media (max-width: 900px) {
+      .creator-list {
+        flex-direction: column;
+        gap: 1.2rem;
+        align-items: stretch;
+      }
+      .creator-card {
+        min-width: unset;
+        max-width: 100%;
+        margin: 0 auto;
+        box-sizing: border-box;
+        padding: 1rem 0.5rem;
+      }
+    }
+    @media (max-width: 600px) {
+      .creator-card {
+        padding: 0.7rem 0.2rem;
+        border-radius: 6px;
+      }
+      .creator-card h3 {
+        font-size: 1.05rem;
+      }
+      .creator-card .desc {
+        font-size: 0.95rem;
+      }
     }
     .darkmode .creator-card { background: #23272b; color: #fff; }
     .darkmode .creator-card .desc { color: #ccc; }

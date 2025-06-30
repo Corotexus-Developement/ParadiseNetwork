@@ -51,19 +51,24 @@
       justify-content: center;
       margin-top: 0.5rem;
       flex-wrap: wrap;
+      align-items: stretch;
     }
     .creator-link-btn {
-      display: inline-block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       padding: 0.4rem 1rem;
       border-radius: 5px;
       color: #fff;
       font-weight: bold;
       text-decoration: none;
-      min-width: 90px;
+      min-width: 110px;
       text-align: center;
       transition: background 0.2s;
       border: none;
       cursor: pointer;
+      height: 40px;
+      box-sizing: border-box;
     }
     .creator-link-btn.youtube { background: #FF0000; }
     .creator-link-btn.tiktok { background: #000; }
@@ -188,7 +193,7 @@
         <div class="creator-card">
           <img src="bild/team/coro.png" alt="Corotexus">
           <h3>Corotexus</h3>
-          <div class="desc"> In vielen Dimensionen unterwegs und </div>
+          <div class="desc"> In vielen Dimensionen unterwegs</div>
           <div class="creator-links">
             <a href="https://www.youtube.com/channel/UCreXR_YqWRJHpOzNcppIczA" target="_blank" class="creator-link-btn youtube">YouTube</a>
             <a href="https://vm.tiktok.com/ZMe9MSWRP/" target="_blank" class="creator-link-btn tiktok">TikTok</a>

@@ -57,8 +57,9 @@
           </div>
         </div>
       </div>
+      <!--  class="event-mc-day" title="End Event" data-event-title="End Event" data-event-desc="Vom 2. August bis zum 3. August finden großangelegte Wartungsarbeiten statt. Der Server ist in dieser Zeit möglicherweise nicht erreichbar." -->
       <div class="events-mc-calendar">
-        <h4><span style="font-family: 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif;">📅</span> Juli 2025</h4>
+        <h4><span style="font-family: 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif;">📅</span> August 2025</h4>
         <div class="calendar-table-wrapper">
           <table class="calendar-table-mc">
             <thead>
@@ -68,27 +69,55 @@
             </thead>
             <tbody>
               <tr>
-                <td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td class="event-mc-day" title="End Event" data-event-title="End Event" data-event-desc="Am 26.07.2025 wird das End geöffnet und der erste Enderdrache bekämpft und das das Enderdrachenei findet einen Weg ins Paradies.">6</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>1</td>
+                <td class="event-mc-day maintenance-day" title="Wartungsarbeiten" data-event-title="Wartungsarbeiten" data-event-desc="Vom 2. August bis zum 3. August finden großangelegte Wartungsarbeiten statt. Der Server ist in dieser Zeit möglicherweise nicht erreichbar. Weitere Infos findest du im Discord &lt;span class='event-modal-link-btn'&gt;&lt;a href='https://discord.com/channels/1162749568551760002/1261405880164024390/1400229104413966366' target='_blank' rel='noopener'&gt;Mehr erfahren&lt;/a&gt;&lt;/span&gt;">2</td>
+                <td class="event-mc-day maintenance-day" title="Wartungsarbeiten" data-event-title="Wartungsarbeiten" data-event-desc="Vom 2. August bis zum 3. August finden großangelegte Wartungsarbeiten statt. Der Server ist in dieser Zeit möglicherweise nicht erreichbar. Weitere Infos findest du im Discord &lt;span class='event-modal-link-btn'&gt;&lt;a href='https://discord.com/channels/1162749568551760002/1261405880164024390/1400229104413966366' target='_blank' rel='noopener'&gt;Mehr erfahren&lt;/a&gt;&lt;/span&gt;">3</td>
               </tr>
               <tr>
-                <td>7</td><td>8</td><td>9</td><td>10</td><td>11</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+                <td>10</td>
+              </tr>
+              <tr>
+                <td>11</td>
                 <td>12</td>
                 <td>13</td>
+                <td>14</td>
+                <td>15</td>
+                <td>16</td>
+                <td>17</td>
               </tr>
               <tr>
-                <td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td>
+                <td>18</td>
+                <td>19</td>
+                <td>20</td>
+                <td>21</td>
+                <td>22</td>
+                <td>23</td>
+                <td>24</td>
               </tr>
               <tr>
-                <td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td>
-              </tr>
-              <tr>
+                <td>25</td>
+                <td>26</td>
+                <td>27</td>
                 <td>28</td>
-                <td>29</td><td>30</td><td>31</td><td></td><td></td><td></td>
+                <td>29</td>
+                <td>30</td>
+                <td>31</td>
               </tr>
             </tbody>
           </table>
         </div>
         <small>🟩 = Event-Tag</small>
+        <small>🟨 = Wartungsarbeiten</small>
       </div>
       <div class="events-mc-history">
         <h4><span style="font-family: 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif;">⏳</span> Vergangene Events</h4>
@@ -219,7 +248,7 @@
       td.style.cursor = 'pointer';
       td.addEventListener('click', function(e) {
         document.getElementById('eventModalTitle').textContent = td.getAttribute('data-event-title') || '';
-        document.getElementById('eventModalDesc').textContent = td.getAttribute('data-event-desc') || '';
+        document.getElementById('eventModalDesc').innerHTML = td.getAttribute('data-event-desc') || '';
         document.getElementById('eventModal').style.display = 'flex';
       });
     });
@@ -235,6 +264,24 @@
   </script>
   <style>
     /* ...existing code... */
+    .event-modal-link-btn a {
+      display: inline-block;
+      background: #ffe066;
+      color: #23272b;
+      font-size: 0.98em;
+      font-weight: 500;
+      padding: 0.25em 0.9em;
+      border-radius: 6px;
+      text-decoration: none;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+      margin-top: 0.5em;
+      transition: background 0.2s, color 0.2s;
+    }
+    .event-modal-link-btn a:hover, .event-modal-link-btn a:focus {
+      background: #ffd700;
+      color: #1976d2;
+      outline: none;
+    }
     .scroll-to-top-btn {
       position: fixed;
       right: 2.2rem;

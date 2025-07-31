@@ -458,6 +458,13 @@ footer {
   flex-wrap: wrap;
   justify-content: flex-start;
 }
+.maintenance-day {
+  background: #ffe066 !important;
+  color: #23272b !important;
+  border-radius: 6px;
+  font-weight: bold;
+  box-shadow: 0 0 0 2px #f7d56033;
+}
 .event-mc-block {
   border: 2px solid #bdbdbd;
   border-radius: 8px;

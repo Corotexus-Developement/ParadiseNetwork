@@ -274,8 +274,232 @@
               Beschreibung folgt ...</div>
       </div>
     </section>
+    <!-- Vergleichstabelle der Ränge (Feature-Grid) -->
+    <section class="ranks-compare-section" style="max-width:1000px;margin:2.5rem auto 2.5rem auto;">
+      <h2 class="ranks-title" style="font-size:1.5rem;margin-bottom:1.2rem;">Rang-Vergleich</h2>
+      <div class="ranks-feature-grid">
+        <div class="rfg-header"></div>
+        <div class="rfg-header">
+          <span class="rfg-rank-img-wrapper">
+            <img src="bild/rang/lotus_rang.png" alt="Lotus" class="rfg-rankimg" />
+            <span class="rfg-rank-img-shine"></span>
+          </span>
+          <div class="rfg-rank lotus">Lotus</div>
+        </div>
+        <div class="rfg-header">
+          <span class="rfg-rank-img-wrapper">
+            <img src="bild/rang/viper_rang.png" alt="Viper" class="rfg-rankimg" />
+            <span class="rfg-rank-img-shine"></span>
+          </span>
+          <div class="rfg-rank viper">Viper</div>
+        </div>
+        <div class="rfg-header">
+          <span class="rfg-rank-img-wrapper">
+            <img src="bild/rang/vulkan_rang.png" alt="Vulcan" class="rfg-rankimg" />
+            <span class="rfg-rank-img-shine"></span>
+          </span>
+          <div class="rfg-rank vulkan">Vulcan</div>
+        </div>
+        <!-- Features -->
+        <div class="rfg-feature">Laufzeit</div>
+        <div class="rfg-cell">30 Tage</div>
+        <div class="rfg-cell" style="grid-column: span 2;">Permanent</div>
+        <div class="rfg-feature">Sign</div>
+        <div class="rfg-cell"><span class="rfg-check">✔</span> 1×/Woche</div>
+        <div class="rfg-cell rfg-cross">✖</div>
+        <div class="rfg-cell"><span class="rfg-check">✔</span> unbegrenzt</div>
+        <div class="rfg-feature">Skull</div>
+        <div class="rfg-cell rfg-cross">✖</div>
+        <div class="rfg-cell rfg-cross">✖</div>
+        <div class="rfg-cell"><span class="rfg-check">✔</span> (nicht für Spielerhandel)</div>
+        <div class="rfg-feature">Homes</div>
+        <div class="rfg-cell"><span class="rfg-check">✔</span> 5</div>
+        <div class="rfg-cell"><span class="rfg-check">✔</span> 10</div>
+        <div class="rfg-cell"><span class="rfg-check">✔</span> 15</div>
+        <div class="rfg-feature">Länder</div>
+        <div class="rfg-cell rfg-cross">✖</div>
+        <div class="rfg-cell"><span class="rfg-check">✔</span> 4</div>
+        <div class="rfg-cell"><span class="rfg-check">✔</span> 8</div>
+        <div class="rfg-feature">Chunks pro Land</div>
+        <div class="rfg-cell rfg-cross">✖</div>
+        <div class="rfg-cell"><span class="rfg-check">✔</span> 350</div>
+        <div class="rfg-cell rfg-cross">✖</div>
+        <div class="rfg-feature">Farbig schreiben</div>
+        <div class="rfg-cell"><span class="rfg-check">✔</span></div>
+        <div class="rfg-cell rfg-cross">✖</div>
+        <div class="rfg-cell"><span class="rfg-check">✔</span></div>
+        <div class="rfg-feature">Warp erstellen</div>
+        <div class="rfg-cell rfg-cross">✖</div>
+        <div class="rfg-cell rfg-cross">✖</div>
+        <div class="rfg-cell"><span class="rfg-check">✔</span> (100.000)</div>
+        <div class="rfg-feature">Biom ändern</div>
+        <div class="rfg-cell rfg-cross">✖</div>
+        <div class="rfg-cell"><span class="rfg-check">✔</span> 1×/Monat</div>
+        <div class="rfg-cell"><span class="rfg-check">✔</span> unbegrenzt</div>
+        <div class="rfg-feature">/anvil</div>
+        <div class="rfg-cell rfg-cross">✖</div>
+        <div class="rfg-cell"><span class="rfg-check">✔</span></div>
+        <div class="rfg-cell rfg-cross">✖</div>
+        <div class="rfg-feature">Spawner abbauen</div>
+        <div class="rfg-cell"><span class="rfg-check">✔</span> Silk Touch</div>
+        <div class="rfg-cell"><span class="rfg-check">✔</span> Silk Touch</div>
+        <div class="rfg-cell"><span class="rfg-check">✔</span> Behutsamkeit</div>
+        <div class="rfg-feature">Crate</div>
+        <div class="rfg-cell"><span class="rfg-check">✔</span> Lotus</div>
+        <div class="rfg-cell"><span class="rfg-check">✔</span> Viper</div>
+        <div class="rfg-cell"><span class="rfg-check">✔</span> Vulcan</div>
+      </div>
+    </section>
   </main>
-  <footer>
+  <style>
+    .ranks-feature-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr 1fr 1fr;
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 2px 16px rgba(33,150,243,0.10);
+      overflow: hidden;
+      margin-bottom: 2.2rem;
+    }
+    .rfg-header {
+      background: #f7fafd;
+      text-align: center;
+      padding: 1.1em 0.5em 0.7em 0.5em;
+      font-weight: 900;
+      font-size: 1.13rem;
+      border-bottom: 2px solid #e3eaf2;
+      border-right: 1px solid #e3eaf2;
+    }
+    .rfg-header:last-child {
+      border-right: none;
+    }
+    .rfg-rank-img-wrapper {
+      display: inline-block;
+      position: relative;
+      width: 64px;
+      height: 64px;
+      margin-bottom: 0.18em;
+      vertical-align: middle;
+    }
+    .rfg-rankimg {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 0;
+      box-shadow: none;
+      background: none;
+      position: relative;
+      z-index: 1;
+      aspect-ratio: 1/1;
+      display: block;
+    }
+    .rfg-rank-img-shine {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      pointer-events: none;
+      border-radius: inherit;
+      z-index: 2;
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(120deg, rgba(255,255,255,0.0) 0%, rgba(255,255,255,0.55) 45%, rgba(255,255,255,0.0) 80%);
+      transform: translateX(-120%) skewX(-20deg);
+      animation: shiny-move 4.5s cubic-bezier(.4,.7,.7,1) infinite;
+      will-change: transform, opacity;
+    }
+    .rfg-rank {
+      font-size: 0.98em;
+      font-weight: 600;
+      margin-top: 0.13em;
+      letter-spacing: 0.01em;
+      text-shadow: 0 2px 8px #0001;
+      text-transform: uppercase;
+      opacity: 0.88;
+    }
+    .rfg-rank.lotus { color: #388e3c; }
+    .rfg-rank.viper { color: #ef6c00; }
+    .rfg-rank.vulkan { color: #c62828; }
+    .rfg-feature {
+      background: #f7fafd;
+      color: #1976d2;
+      font-weight: 700;
+      padding: 0.8em 0.7em;
+      border-bottom: 1px solid #e3eaf2;
+      border-right: 1px solid #e3eaf2;
+      min-width: 120px;
+      display: flex;
+      align-items: center;
+    }
+    .rfg-cell {
+      text-align: center;
+      padding: 0.8em 0.5em;
+      border-bottom: 1px solid #e3eaf2;
+      border-right: 1px solid #e3eaf2;
+      color: #23272b;
+      font-weight: 500;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+    }
+    .rfg-cell:last-child, .rfg-feature:last-child {
+      border-right: none;
+    }
+    .rfg-check {
+      color: #43a047;
+      font-size: 1.15em;
+      font-weight: bold;
+      margin-right: 0.2em;
+    }
+    .rfg-cross {
+      color: #e53935;
+      font-size: 1.15em;
+      font-weight: bold;
+      justify-content: center;
+    }
+    @media (max-width: 900px) {
+      .ranks-feature-grid {
+        font-size: 0.97rem;
+      }
+      .rfg-feature { min-width: 80px; }
+      .rfg-header, .rfg-cell, .rfg-feature { padding: 0.6em 0.2em; }
+    }
+    @media (max-width: 700px) {
+      .ranks-feature-grid {
+        font-size: 0.89rem;
+        grid-template-columns: 1.1fr 1fr 1fr 1fr;
+      }
+      .rfg-header, .rfg-cell, .rfg-feature { padding: 0.38em 0.08em; }
+      .rfg-rank-img-wrapper { width: 38px; height: 38px; }
+    }
+    @media (max-width: 520px) {
+      .ranks-feature-grid {
+        font-size: 0.82rem;
+        grid-template-columns: 1.1fr 1fr 1fr 1fr;
+      }
+      .rfg-header, .rfg-cell, .rfg-feature { padding: 0.22em 0.03em; }
+      .rfg-rank-img-wrapper { width: 26px; height: 26px; }
+    }
+    .darkmode .ranks-feature-grid {
+      background: #23272b;
+      box-shadow: 0 2px 16px rgba(33,150,243,0.18);
+    }
+    .darkmode .rfg-header, .darkmode .rfg-feature {
+      background: #1e2936;
+      color: #4fc3f7;
+      border-bottom: 1px solid #263238;
+      border-right: 1px solid #263238;
+    }
+    .darkmode .rfg-cell {
+      color: #e3f2fd;
+      background: #23272b;
+      border-bottom: 1px solid #263238;
+      border-right: 1px solid #263238;
+    }
+    .rfg-check, .rfg-cross { display: inline-block; min-width: 1.2em; }
+  </style>
     <p>© 2025 ParadiseNetwork.us – Ein Projekt für die Community</p>
   </footer>
   <script>

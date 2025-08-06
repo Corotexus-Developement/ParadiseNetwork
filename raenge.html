@@ -275,9 +275,10 @@
       </div>
     </section>
     <!-- Vergleichstabelle der Ränge (Feature-Grid) -->
-    <section class="ranks-compare-section" style="max-width:1000px;margin:2.5rem auto 2.5rem auto;">
+    <section class="ranks-compare-section" style="max-width:900px;margin:2rem auto 2.5rem auto;">
       <h2 class="ranks-title" style="font-size:1.5rem;margin-bottom:1.2rem;">Rang-Vergleich</h2>
-      <div class="ranks-feature-grid">
+      <div class="ranks-feature-grid-wrapper">
+        <div class="ranks-feature-grid">
         <div class="rfg-header"></div>
         <div class="rfg-header">
           <span class="rfg-rank-img-wrapper">
@@ -348,18 +349,87 @@
         <div class="rfg-cell"><span class="rfg-check">✔</span> Lotus</div>
         <div class="rfg-cell"><span class="rfg-check">✔</span> Viper</div>
         <div class="rfg-cell"><span class="rfg-check">✔</span> Vulcan</div>
+        </div>
       </div>
     </section>
   </main>
   <style>
+    .ranks-feature-grid-wrapper {
+      width: 100%;
+      overflow-x: auto;
+      background: none;
+      border-radius: 18px;
+      box-shadow: none;
+      margin-bottom: 2.2rem;
+      padding-bottom: 0.5rem;
+    }
+    .scroll-to-top-btn {
+      position: fixed;
+      right: 2.2rem;
+      bottom: 2.2rem;
+      z-index: 9999;
+      background: var(--primary, #2196f3);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      font-size: 2rem;
+      box-shadow: 0 2px 8px rgba(33,150,243,0.18);
+      cursor: pointer;
+      opacity: 0.85;
+      display: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.2s, background 0.2s;
+    }
+    .scroll-to-top-btn:hover, .scroll-to-top-btn:focus {
+      opacity: 1;
+      background: #1976d2;
+      outline: none;
+    }
+    .scroll-to-top-btn span {
+      pointer-events: none;
+      font-weight: 900;
+      font-size: 2rem;
+      line-height: 1;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+    }
+    .darkmode .scroll-to-top-btn {
+      background: #4fc3f7;
+      color: #23272b;
+    }
+    .darkmode .scroll-to-top-btn:hover, .darkmode .scroll-to-top-btn:focus {
+      background: #0288d1;
+      color: #fff;
+    }
+    @media (max-width: 600px) {
+      .scroll-to-top-btn {
+        right: 1rem;
+        bottom: 1rem;
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+      }
+      .scroll-to-top-btn span {
+        font-size: 1.5rem;
+      }
+    }
     .ranks-feature-grid {
+      min-width: 600px;
       display: grid;
       grid-template-columns: 1.1fr 1fr 1fr 1fr;
       background: #fff;
       border-radius: 18px;
       box-shadow: 0 2px 16px rgba(33,150,243,0.10);
       overflow: hidden;
-      margin-bottom: 2.2rem;
+      margin-bottom: 0;
     }
     .rfg-header {
       background: #f7fafd;
@@ -462,6 +532,7 @@
     @media (max-width: 900px) {
       .ranks-feature-grid {
         font-size: 0.97rem;
+        min-width: 520px;
       }
       .rfg-feature { min-width: 80px; }
       .rfg-header, .rfg-cell, .rfg-feature { padding: 0.6em 0.2em; }
@@ -469,7 +540,7 @@
     @media (max-width: 700px) {
       .ranks-feature-grid {
         font-size: 0.89rem;
-        grid-template-columns: 1.1fr 1fr 1fr 1fr;
+        min-width: 420px;
       }
       .rfg-header, .rfg-cell, .rfg-feature { padding: 0.38em 0.08em; }
       .rfg-rank-img-wrapper { width: 38px; height: 38px; }
@@ -477,7 +548,7 @@
     @media (max-width: 520px) {
       .ranks-feature-grid {
         font-size: 0.82rem;
-        grid-template-columns: 1.1fr 1fr 1fr 1fr;
+        min-width: 340px;
       }
       .rfg-header, .rfg-cell, .rfg-feature { padding: 0.22em 0.03em; }
       .rfg-rank-img-wrapper { width: 26px; height: 26px; }
@@ -500,6 +571,8 @@
     }
     .rfg-check, .rfg-cross { display: inline-block; min-width: 1.2em; }
   </style>
+  <button class="scroll-to-top-btn" id="scrollToTopBtn" aria-label="Nach oben"><span style="pointer-events:none;">↑</span></button>
+  <footer>
     <p>© 2025 ParadiseNetwork.us – Ein Projekt für die Community</p>
   </footer>
   <script>
@@ -516,6 +589,18 @@
       document.body.classList.add('darkmode');
     }
     // Responsive Navigation
+    // Scroll-to-top Button
+    const scrollBtn = document.getElementById('scrollToTopBtn');
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 200) {
+        scrollBtn.style.display = 'flex';
+      } else {
+        scrollBtn.style.display = 'none';
+      }
+    });
+    scrollBtn.addEventListener('click', function() {
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    });
     const hamburger = document.getElementById('hamburger');
     const nav = document.getElementById('mainNav');
     function closeNavOnResize() {

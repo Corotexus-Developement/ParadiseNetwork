@@ -171,6 +171,51 @@
       0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.7; }
       50% { transform: scale(1.5) rotate(20deg); opacity: 1; }
     }
+    /* Key-Rain Animation statt normaler Key-Animation */
+    .rank-key-rain {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 4;
+    }
+    
+    .key-drop {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      opacity: 0;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+      animation: key-rain linear infinite;
+    }
+    
+    .lotus .key-drop { background-image: url('bild/rang/lotus_key.png'); }
+    .viper .key-drop { background-image: url('bild/rang/viper_key.png'); }
+    .vulkan .key-drop { background-image: url('bild/rang/vulcan_key.png'); }
+    
+    @keyframes key-rain {
+      0% { 
+        transform: translateY(-100%) rotate(0deg);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.4;
+      }
+      90% {
+        opacity: 0.4;
+      }
+      100% { 
+        transform: translateY(100%) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
     @media (max-width: 600px) {
       .ranks-title { font-size: 1.3rem; }
       .rank-box { padding: 1.2rem 0.7rem; }
@@ -178,6 +223,16 @@
       .rank-desc { font-size: 0.98rem; }
       .rank-img-wrapper { max-width: 70px; }
       .rank-img { max-width: 70px; margin-bottom: 0.7rem; }
+      .rank-key-anim {
+        width: 24px;
+        height: 24px;
+        bottom: 6px;
+        right: 6px;
+      }
+      .key-drop {
+        width: 14px;
+        height: 14px;
+      }
     }
 
     /* Scrollbalken für Vergleichstabelle optisch anpassen */
@@ -262,6 +317,11 @@
           <img src="bild/rang/lotus_rang.png" alt="Lotus Rang" class="rank-img" />
           <span class="rank-img-shine"></span>
         </span>
+        <div class="rank-key-rain">
+          <span class="key-drop" style="left: 15%; animation-duration: 3s; animation-delay: 0s;"></span>
+          <span class="key-drop" style="left: 45%; animation-duration: 3.5s; animation-delay: 1.2s;"></span>
+          <span class="key-drop" style="left: 75%; animation-duration: 2.8s; animation-delay: 0.8s;"></span>
+        </div>
         <div class="rank-name">Lotus</div>
          <div style="color: #a259e6; font-size: 1.08rem; font-weight: 700; margin-bottom: 0.5rem; letter-spacing: 0.03em; text-shadow: 0 2px 8px #a259e633;">
           Der erste Schritt zum Ruhm
@@ -296,6 +356,11 @@
           <img src="bild/rang/viper_rang.png" alt="Viper Rang" class="rank-img" />
           <span class="rank-img-shine"></span>
         </span>
+        <div class="rank-key-rain">
+          <span class="key-drop" style="left: 25%; animation-duration: 3.2s; animation-delay: 0.3s;"></span>
+          <span class="key-drop" style="left: 55%; animation-duration: 2.9s; animation-delay: 1.5s;"></span>
+          <span class="key-drop" style="left: 85%; animation-duration: 3.3s; animation-delay: 0.6s;"></span>
+        </div>
         <div class="rank-name">Viper</div>
         <div style="color: #5bea14; font-size: 1.08rem; font-weight: 700; margin-bottom: 0.5rem; letter-spacing: 0.03em; text-shadow: 0 2px 8px #a259e633;">
           Schlängel dich an die Spitze
@@ -333,6 +398,11 @@
           <img src="bild/rang/vulkan_rang.png" alt="Vulkan Rang" class="rank-img" />
           <span class="rank-img-shine"></span>
         </span>
+        <div class="rank-key-rain">
+          <span class="key-drop" style="left: 35%; animation-duration: 3.1s; animation-delay: 0.4s;"></span>
+          <span class="key-drop" style="left: 65%; animation-duration: 3.4s; animation-delay: 1.1s;"></span>
+          <span class="key-drop" style="left: 95%; animation-duration: 3s; animation-delay: 0.9s;"></span>
+        </div>
         <div class="rank-name">Vulcan</div>
          <div style="color: #ffc83c; font-size: 1.08rem; font-weight: 700; margin-bottom: 0.5rem; letter-spacing: 0.03em; text-shadow: 0 2px 8px #a259e633;">
           Lass den Vulcan auf dich niederbrennen!

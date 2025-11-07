@@ -179,6 +179,38 @@
       .rank-img-wrapper { max-width: 70px; }
       .rank-img { max-width: 70px; margin-bottom: 0.7rem; }
     }
+
+    /* Scrollbalken für Vergleichstabelle optisch anpassen */
+    .ranks-compare-table-wrapper {
+      scrollbar-width: thin;
+      scrollbar-color: #2196f3 #e3eaf2;
+    }
+    .ranks-compare-table-wrapper::-webkit-scrollbar {
+      height: 10px;
+      background: #e3eaf2;
+      border-radius: 8px;
+    }
+    .ranks-compare-table-wrapper::-webkit-scrollbar-thumb {
+      background: #2196f3;
+      border-radius: 8px;
+      border: 2px solid #e3eaf2;
+    }
+    .ranks-compare-table-wrapper::-webkit-scrollbar-thumb:hover {
+      background: #1565c0;
+    }
+    .darkmode .ranks-compare-table-wrapper {
+      scrollbar-color: #4fc3f7 #23272b;
+    }
+    .darkmode .ranks-compare-table-wrapper::-webkit-scrollbar {
+      background: #23272b;
+    }
+    .darkmode .ranks-compare-table-wrapper::-webkit-scrollbar-thumb {
+      background: #4fc3f7;
+      border: 2px solid #23272b;
+    }
+    .darkmode .ranks-compare-table-wrapper::-webkit-scrollbar-thumb:hover {
+      background: #0288d1;
+    }
   </style>
 </head>
 <body>

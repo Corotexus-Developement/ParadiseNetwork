@@ -326,7 +326,7 @@
         <table class="ranks-compare-table" style="width:100%;border-collapse:collapse;">
           <thead>
             <tr style="background:#f7fafd;">
-              <th style="min-width:120px;"></th>
+              <th class="sticky-col" style="min-width:120px;"></th>
               <th style="color:#388e3c;">
                 <img src="bild/rang/lotus_rang.png" alt="Lotus" style="height:32px;vertical-align:middle;">
                 <div style="font-weight:700;">Lotus</div>
@@ -343,79 +343,79 @@
           </thead>
           <tbody>
             <tr>
-              <td>Laufzeit</td>
+              <td class="sticky-col">Laufzeit</td>
               <td>30 Tage</td>
               <td>Permanent</td>
               <td>Permanent</td>
             </tr>
             <tr>
-              <td>Preis</td>
+              <td class="sticky-col">Preis</td>
               <td>250.000</td>
               <td>950.000</td>
               <td>3.000.000</td>
             </tr>
             <tr>
-              <td>Homes</td>
+              <td class="sticky-col">Homes</td>
               <td>5</td>
               <td>10</td>
               <td>20</td>
             </tr>
             <tr>
-              <td>Länder</td>
+              <td class="sticky-col">Länder</td>
               <td>2</td>
               <td>4</td>
               <td>8</td>
             </tr>
             <tr>
-              <td>Chunks pro Land</td>
+              <td class="sticky-col">Chunks pro Land</td>
               <td>250</td>
               <td>350</td>
               <td>400</td>
             </tr>
             <tr>
-              <td>/sign</td>
+              <td class="sticky-col">/sign</td>
               <td>alle 24h</td>
               <td>alle 12h</td>
               <td>unbegrenzt</td>
             </tr>
             <tr>
-              <td>Crates</td>
+              <td class="sticky-col">Crates</td>
               <td>Lotus</td>
               <td>Lotus, Viper</td>
               <td>Lotus, Viper, Vulcan</td>
             </tr>
             <tr>
-              <td>/back</td>
+              <td class="sticky-col">/back</td>
               <td style="color:#e53935;">&#10008;</td>
               <td style="color:#43a047;">&#10004;</td>
               <td style="color:#43a047;">&#10004;</td>
             </tr>
             <tr>
-              <td>Spawner mit Silk Touch</td>
+              <td class="sticky-col">Spawner mit Silk Touch</td>
               <td style="color:#43a047;">&#10004;</td>
               <td style="color:#43a047;">&#10004;</td>
               <td style="color:#43a047;">&#10004;</td>
             </tr>
             <tr>
-              <td>Biomänderantrag</td>
+              <td class="sticky-col">Biomänderantrag</td>
               <td style="color:#e53935;">&#10008;</td>
               <td>1×/Monat</td>
               <td>unbegrenzt</td>
             </tr>
             <tr>
-              <td>/ec</td>
+              <td class="sticky-col">/ec</td>
               <td style="color:#e53935;">&#10008;</td>
               <td style="color:#e53935;">&#10008;</td>
               <td style="color:#43a047;">&#10004;</td>
             </tr>
             <tr>
-              <td>Eigener /warp</td>
+              <td class="sticky-col">Eigener /warp</td>
               <td style="color:#e53935;">&#10008;</td>
               <td style="color:#e53935;">&#10008;</td>
               <td>für 100.000</td>
             </tr>
             <tr>
-              <td>Weitere Befehle</td>
+              <td class="sticky-col">Weitere Befehle</td>
               <td>/wb, /stonecutter, /cartographitable, /grindestone, /bloom, /smithingtable</td>
               <td>/wb, /stonecutter, /cartographitable, /grindestone, /bloom, /smithingtable</td>
               <td>/wb, /stonecutter, /cartographitable, /grindestone, /bloom, /smithingtable</td>
@@ -470,6 +470,75 @@
       .darkmode .ranks-compare-table td:first-child {
         background: #1e2936;
         color: #4fc3f7;
+      }
+
+      /* Rang-Spalten Styles */
+      .ranks-compare-table td:nth-child(2) {
+        background: linear-gradient(180deg, #e8f5e915, #e8f5e922);
+        border-left: 2px solid #8bc34a22;
+      }
+      .ranks-compare-table td:nth-child(3) {
+        background: linear-gradient(180deg, #fff3e015, #fff3e022);
+        border-left: 2px solid #ff980022;
+      }
+      .ranks-compare-table td:nth-child(4) {
+        background: linear-gradient(180deg, #ffebee15, #ffebee922);
+        border-left: 2px solid #e5393522;
+      }
+
+      .ranks-compare-table th:nth-child(2) {
+        background: linear-gradient(180deg, #e8f5e922, #e8f5e933);
+        border-left: 2px solid #8bc34a33;
+      }
+      .ranks-compare-table th:nth-child(3) {
+        background: linear-gradient(180deg, #fff3e022, #fff3e033);
+        border-left: 2px solid #ff980033;
+      }
+      .ranks-compare-table th:nth-child(4) {
+        background: linear-gradient(180deg, #ffebee22, #ffebee33);
+        border-left: 2px solid #e5393533;
+      }
+
+      /* Darkmode Anpassungen */
+      .darkmode .ranks-compare-table td:nth-child(2) {
+        background: linear-gradient(180deg, #263d2b22, #263d2b33);
+        border-left: 2px solid #8bc34a44;
+      }
+      .darkmode .ranks-compare-table td:nth-child(3) {
+        background: linear-gradient(180deg, #4e2e0e22, #4e2e0e33);
+        border-left: 2px solid #ff980044;
+      }
+      .darkmode .ranks-compare-table td:nth-child(4) {
+        background: linear-gradient(180deg, #4b232322, #4b232333);
+        border-left: 2px solid #e5393544;
+      }
+
+      .darkmode .ranks-compare-table th:nth-child(2) {
+        background: linear-gradient(180deg, #263d2b33, #263d2b44);
+        border-left: 2px solid #8bc34a55;
+      }
+      .darkmode .ranks-compare-table th:nth-child(3) {
+        background: linear-gradient(180deg, #4e2e0e33, #4e2e0e44);
+        border-left: 2px solid #ff980055;
+      }
+      .darkmode .ranks-compare-table th:nth-child(4) {
+        background: linear-gradient(180deg, #4b232333, #4b232344);
+        border-left: 2px solid #e5393555;
+      }
+
+      .ranks-compare-table th.sticky-col,
+      .ranks-compare-table td.sticky-col {
+        position: sticky;
+        left: 0;
+        background: #f7fafd;
+        z-index: 2;
+        box-shadow: 2px 0 6px -2px #0001;
+      }
+      .darkmode .ranks-compare-table th.sticky-col,
+      .darkmode .ranks-compare-table td.sticky-col {
+        background: #1e2936;
+        color: #4fc3f7;
+        box-shadow: 2px 0 6px -2px #0006;
       }
     </style>
   </main>

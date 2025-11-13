@@ -26,6 +26,11 @@ header {
   background-position: center;
 }
 
+a {
+    color: var(--primary, #2196f3);
+    text-decoration: underline;
+}
+
 header h1 {
   margin: 0;
   font-size: 2.5rem;

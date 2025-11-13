@@ -343,9 +343,7 @@
 
 /* Standard-Desktop-Fall (bewahrt bestehendes Aussehen, falls bereits definiert) */
 .ranks-compare-table th.sticky-col,
-.ranks-compare-table td.sticky-col {
-	/* ...existing code... */ 
-	/* fallback / bereits vorhandene Regeln werden hier nicht dupliziert */
+.ranks-compare-table td.sticky-col { 
 }
 
 /* Darkmode-Anpassung für die sticky-Spalte */
@@ -871,8 +869,13 @@
   </style>
   <button class="scroll-to-top-btn" id="scrollToTopBtn" aria-label="Nach oben"><span style="pointer-events:none;">↑</span></button>
   <footer>
-    <p>© 2025 ParadiseNetwork.us – Ein Projekt für die Community</p>
-  </footer>
+  <p>
+    © 2025 ParadiseNetwork.us – Alle Rechte vorbehalten.  
+    <a href="/impressum.html">Impressum</a> | 
+    <a href="https://paradisenetwork-store.tebex.io/Datenschutzerkl%C3%A4rung">Datenschutzerklärung</a> | 
+    <a href="https://paradisenetwork-store.tebex.io/AGB">AGB (Tebex-Shop)</a>
+  </p>
+</footer>
   <script>
     // Darkmode persistent über localStorage
     function toggleDarkMode() {

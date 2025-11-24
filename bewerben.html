@@ -6,11 +6,43 @@
   <title>Bewerben – ParadiseNetwork.us</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-a {
+      .scroll-to-top-btn {
+      position: fixed;
+      right: 2.2rem;
+      bottom: 2.2rem;
+      z-index: 9999;
+      background: var(--primary, #2196f3);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      font-size: 2rem;
+      box-shadow: 0 2px 8px rgba(33,150,243,0.18);
+      cursor: pointer;
+      opacity: 0.85;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.2s, background 0.2s;
+    }
+    .scroll-to-top-btn:hover, .scroll-to-top-btn:focus {
+      opacity: 1;
+      background: #1976d2;
+      outline: none;
+    }
+    .darkmode .scroll-to-top-btn {
+      background: #4fc3f7;
+      color: #23272b;
+    }
+    .darkmode .scroll-to-top-btn:hover, .darkmode .scroll-to-top-btn:focus {
+      background: #0288d1;
+      color: #fff;
+    }
+
+    a {
     color: var(--primary, #2196f3);
     text-decoration: underline;
-}
-
 }
 
     .scroll-to-top-btn {

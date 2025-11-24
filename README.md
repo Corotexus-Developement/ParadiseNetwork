@@ -11,7 +11,7 @@ Diese Webseite ist ausschließlich für # ParadiseNetwork.us bestimmt.
 
 🎮 **IP:**
 `ParadiseNetwork.us`
-📌 Version: 1.20+
+📌 Version: 1.20.4
 
 📣 **Offizielle Kanäle:**
 🌐 [Discord](https://discord.gg/qsM4tbsKv4) – Werde Teil der Community

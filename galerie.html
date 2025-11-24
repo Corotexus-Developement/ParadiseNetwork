@@ -460,7 +460,7 @@
       });
     });
 
-    // Galerie Lightbox mit Ordner-Unterstützung und Durchschalten
+    // Galerie Lightbox mit Ordner und Durchschalten
     let galleryImages = [];
     let currentIndex = 0;
 
@@ -493,7 +493,7 @@
       lightboxImg.alt = img.alt;
       caption.textContent = img.alt || '';
 
-      // Titel, Autor, Beschreibung setzen und nur anzeigen, wenn vorhanden
+      // Titel, Autor, Beschreibung
       let hasInfo = false;
       if (img.getAttribute('data-title')) {
         title.textContent = img.getAttribute('data-title');
@@ -538,7 +538,7 @@
       showLightboxImage();
     });
 
-    // Keyboard navigation
+    // M+K navigation
     document.addEventListener('keydown', function(e) {
       const lightbox = document.getElementById('lightbox');
       if (!lightbox.classList.contains('active')) return;
@@ -565,6 +565,18 @@
     scrollBtn.addEventListener('click', function() {
       window.scrollTo({top: 0, behavior: 'smooth'});
     });
+//       ______
+//      / ____/
+//     / /
+//    / /
+//   / /
+//  / /____
+// /______/
+// PPPPPP    AAAAAA   RRRRRR    AAAAAA   DDDDDD   IIIIIIII   SSSSSS   EEEEEEEE
+// P    P   A    A   R    R   A    A   D    D      II     S        E
+// PPPPPP   AAAAAA   RRRRRR   AAAAAA   D    D      II      SSSSSS  EEEEEEEE
+// P       A    A   R R     A    A   D    D      II           S  E
+// P       A    A   R  R    A    A   DDDDDD   IIIIIIII   SSSSSS   EEEEEEEE
   </script>
 </body>
 </html>

@@ -70,7 +70,7 @@ nav a:focus {
 
 .hamburger {
   display: none;
-  position: fixed;
+  position: sticky;
   top: 1.2rem;
   left: 1rem;
   z-index: 1001;
@@ -588,3 +588,17 @@ footer {
     min-height: 140px;
   }
 }
+/*
+//       ______
+//      / ____/
+//     / /
+//    / /
+//   / /
+//  / /____
+// /______/
+// PPPPPP    AAAAAA   RRRRRR    AAAAAA   DDDDDD   IIIIIIII   SSSSSS   EEEEEEEE
+// P    P   A    A   R    R   A    A   D    D      II     S        E
+// PPPPPP   AAAAAA   RRRRRR   AAAAAA   D    D      II      SSSSSS  EEEEEEEE
+// P       A    A   R R     A    A   D    D      II           S  E
+// P       A    A   R  R    A    A   DDDDDD   IIIIIIII   SSSSSS   EEEEEEEE
+*\

@@ -62,6 +62,11 @@
     <h1>Live Karte</h1>
     <p>Behalte die Übersicht über die Welt von ParadiseNetwork</p>
   </header>
+
+  <div class="logo-container">
+    <img src="bild/paradi_logo.png" alt="ParadiseNetwork Logo">
+  </div>
+
   <nav id="mainNav" class="collapsed">
     <a href="index.html">Startseite</a>
     <a href="infos.html">Infos</a>
@@ -106,19 +111,24 @@
     if (localStorage.getItem('darkmode') === '1') {
       document.body.classList.add('darkmode');
     }
+    // Responsive Navigation
     const hamburger = document.getElementById('hamburger');
     const nav = document.getElementById('mainNav');
+
     function closeNavOnResize() {
       if (window.innerWidth > 900) {
+        // Desktop: Navigation ist sichtbar ohne Klassen
         nav.classList.remove('expanded');
         nav.classList.remove('collapsed');
         hamburger.classList.remove('active');
       } else {
+        // Mobile: Navigation ist versteckt mit 'collapsed'
         nav.classList.add('collapsed');
         nav.classList.remove('expanded');
         hamburger.classList.remove('active');
       }
     }
+
     hamburger.addEventListener('click', function() {
       if (nav.classList.contains('expanded')) {
         nav.classList.remove('expanded');
@@ -130,6 +140,8 @@
         hamburger.classList.add('active');
       }
     });
+
+    // Schließe Menü beim Klick auf Link (nur mobil)
     nav.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         if (window.innerWidth <= 900) {
@@ -139,6 +151,7 @@
         }
       });
     });
+
     window.addEventListener('resize', closeNavOnResize);
     window.addEventListener('DOMContentLoaded', closeNavOnResize);
     // Scroll-to-top Button

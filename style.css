@@ -63,20 +63,96 @@ header h1 {
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
 }
 
+/* Logo Container */
+.logo-container {
+  text-align: center;
+  padding: 1rem 0;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+.logo-container img {
+  max-width: 120px;
+  height: auto;
+  display: inline-block;
+}
+
+/* RGB Glow effect only for the logo file 'paradi_logo.png' */
+.logo-container img[src*="paradi_logo.png"] {
+  filter: drop-shadow(0 0 6px rgba(255,0,0,0.45)) drop-shadow(0 0 6px rgba(0,255,0,0.35)) drop-shadow(0 0 8px rgba(0,120,255,0.3));
+  transition: filter 250ms ease, transform 220ms ease;
+  animation: rgb-glow 3s linear infinite;
+}
+
+@keyframes rgb-glow {
+  0% {
+    filter: drop-shadow(0 0 6px rgba(255,0,0,0.45)) drop-shadow(0 0 6px rgba(0,255,0,0.0)) drop-shadow(0 0 8px rgba(0,120,255,0.0));
+    transform: translateY(0);
+  }
+  33% {
+    filter: drop-shadow(0 0 6px rgba(255,0,0,0.0)) drop-shadow(0 0 8px rgba(0,255,0,0.45)) drop-shadow(0 0 8px rgba(0,120,255,0.0));
+    transform: translateY(-1px);
+  }
+  66% {
+    filter: drop-shadow(0 0 6px rgba(255,0,0,0.0)) drop-shadow(0 0 6px rgba(0,255,0,0.0)) drop-shadow(0 0 10px rgba(0,120,255,0.5));
+    transform: translateY(0);
+  }
+  100% {
+    filter: drop-shadow(0 0 6px rgba(255,0,0,0.45)) drop-shadow(0 0 6px rgba(0,255,0,0.35)) drop-shadow(0 0 8px rgba(0,120,255,0.3));
+    transform: translateY(0);
+  }
+}
+
+/* stronger glow on hover/focus for accessibility */
+.logo-container img[src*="paradi_logo.png"]:hover,
+.logo-container img[src*="paradi_logo.png"]:focus {
+  filter: drop-shadow(0 0 12px rgba(255,0,0,0.6)) drop-shadow(0 0 12px rgba(0,255,0,0.55)) drop-shadow(0 0 14px rgba(0,120,255,0.55));
+  transform: translateY(-2px) scale(1.02);
+  animation-duration: 2.2s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-container img[src*="paradi_logo.png"] {
+    animation: none;
+    transition: filter 150ms ease, transform 150ms ease;
+  }
+}
+
+.darkmode .logo-container {
+  background-color: #1e1e1e;
+  border-bottom-color: #333;
+}
+
 nav {
   background-color: #28b485;
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  transition: max-height 0.3s ease;
-  overflow: hidden;
-  max-height: 1000px;
+  overflow: visible;
+  position: relative;
 }
 
 nav.collapsed {
-  max-height: 0;
-  padding: 0;
-  border: none;
+  display: none;
+}
+
+nav.expanded {
+  position: fixed;
+  top: 3.5rem;
+  left: 0;
+  right: 0;
+  width: 100%;
+  max-height: calc(100vh - 3.5rem);
+  overflow-y: auto;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  border-bottom: 1px solid #1c9b6f;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 nav a {
@@ -96,8 +172,8 @@ nav a:focus {
 
 .hamburger {
   display: none;
-  position: sticky;
-  top: 1.2rem;
+  position: fixed;
+  top: 1rem;
   left: 1rem;
   z-index: 1001;
   width: 40px;
@@ -156,17 +232,38 @@ nav a:focus {
 }
 
 @media (max-width: 900px) {
+  .logo-container {
+    padding: 0.8rem 0;
+  }
+
+  .logo-container img {
+    max-width: 100px;
+  }
+
   nav {
     flex-direction: column;
     align-items: stretch;
-    max-height: 0;
-    padding: 0;
-    border: none;
+    display: none;
   }
+  
   nav.expanded {
-    max-height: 600px;
+    position: fixed;
+    top: 3.5rem;
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-height: calc(100vh - 3.5rem);
+    overflow-y: auto;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
     border-bottom: 1px solid #1c9b6f;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 0;
   }
+  
   .hamburger {
     display: flex;
   }
@@ -254,6 +351,14 @@ nav a:focus {
 }
 
 @media (max-width: 600px) {
+  .logo-container {
+    padding: 0.6rem 0;
+  }
+
+  .logo-container img {
+    max-width: 80px;
+  }
+
   body {
     font-size: 0.98rem;
   }

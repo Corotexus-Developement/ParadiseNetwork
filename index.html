@@ -145,6 +145,10 @@
     <p>Dein Deutscher Minecraft Freebuild Server – ParadiseNetwork.us</p>
   </header>
 
+  <div class="logo-container">
+    <img src="bild/paradi_logo.png" alt="ParadiseNetwork Logo">
+  </div>
+
   <nav id="mainNav" class="collapsed">
     <a href="index.html">Startseite</a>
     <a href="infos.html">Infos</a>
@@ -296,10 +300,12 @@
 
     function closeNavOnResize() {
       if (window.innerWidth > 900) {
+        // Desktop: Navigation ist sichtbar ohne Klassen
         nav.classList.remove('expanded');
         nav.classList.remove('collapsed');
         hamburger.classList.remove('active');
       } else {
+        // Mobile: Navigation ist versteckt mit 'collapsed'
         nav.classList.add('collapsed');
         nav.classList.remove('expanded');
         hamburger.classList.remove('active');

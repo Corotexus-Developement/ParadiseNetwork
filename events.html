@@ -229,10 +229,14 @@
         nav.classList.remove('expanded');
         nav.classList.add('collapsed');
         hamburger.classList.remove('active');
+        document.body.classList.remove('nav-open');
       } else {
         nav.classList.add('expanded');
         nav.classList.remove('collapsed');
         hamburger.classList.add('active');
+        document.body.classList.add('nav-open');
+        // Scroll navigation to top when opened
+        nav.scrollTop = 0;
       }
     });
 

@@ -18,6 +18,7 @@
     text-align: center;
 }
     .team-member {
+      position: relative;
       background: #f5f5f5;
       border-radius: 10px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.08);
@@ -53,6 +54,58 @@
     .team-member p {
       font-size: 0.98rem;
       margin: 0;
+    }
+    /* Buttons oben links/rechts in Team-Kacheln */
+    .team-member .member-btn {
+      position: absolute;
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      border: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0,0,0,0.06);
+      cursor: pointer;
+      transition: background 0.15s, transform 0.12s;
+      padding: 0;
+    }
+    .team-member .member-btn:active { transform: translateY(1px); }
+    .team-member .bio-btn { left: 8px; top: 8px; }
+    .team-member .skin-btn { right: 8px; top: 8px; }
+    .team-member .member-btn img { width: 24px; height: 24px; display: block; border-radius: 4px; }
+
+    /* Modal / Karte (kleine Karte mit Biografie) */
+    .team-modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.45);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10000;
+      padding: 1rem;
+    }
+    .team-modal {
+      background: #fff;
+      color: #23272b;
+      border-radius: 10px;
+      max-width: 520px;
+      width: 100%;
+      box-shadow: 0 6px 30px rgba(0,0,0,0.28);
+      padding: 1rem 1.2rem;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+    .team-modal .thumb { width: 84px; height: 84px; border-radius: 8px; overflow: hidden; flex: 0 0 84px; }
+    .team-modal .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .team-modal .content { flex: 1 1 auto; }
+    .team-modal .content h3 { margin: 0 0 0.2rem 0; }
+    .team-modal .close-btn { margin-left: 0.5rem; background: transparent; border: none; font-size: 1.2rem; cursor: pointer; }
+    @media (max-width: 520px) {
+      .team-modal { flex-direction: column; align-items: center; text-align: center; }
+      .team-modal .thumb { margin-bottom: 0.5rem; }
     }
     @media (max-width: 700px) {
       .team-list { flex-direction: column; gap: 1.2rem; }
@@ -262,84 +315,84 @@
     <section class="card">
       <h2>Unser Team</h2>
       <div class="team-list">
-        <div class="team-member">
+        <div class="team-member" data-mcname="derder96">
           <img src="bild/team/derder96-2.png" alt="derder96">
           <h3>derder96</h3>
           <div class="role">Owner</div>
           <p>"Ich bin der erste Teamler meines Servers"</p>
         </div>
 
-        <div class="team-member">
+        <div class="team-member" data-mcname="HoChilli_">
           <img src="bild/team/HoChilli.jpg" alt="HoChilli">
-          <h3>HoChilli</h3>
+          <h3>HoChilli_</h3>
           <div class="role">Co-Owner</div>
-          <p>"Text folgt..."</p>
+          <p>"Schafe spawnen nur wenn du sie nicht brauchst."</p>
         </div>
       
-        <div class="team-member">
+        <div class="team-member" data-mcname="KiragoPV">
           <img src="bild/team/leonie.jpg" alt="Leonie">
           <h3>KiragoPV</h3>
           <div class="role">Co-Owner</div>
           <p><i>"Wenn Chat es nicht kann, kann ichs auch nicht"</i></p>
         </div>
 
-        <div class="team-member">
+        <div class="team-member" data-mcname="Corotexus_YT">
           <img src="bild/team/coro.png" alt="Corotexus_YT">
           <h3>Corotexus_YT</h3>
           <div class="role">Administrator</div>
           <p><i>"Heyho ich bin Coro. 1999 gespawnt und stehts Multidimensional unterwegs. Immer wieder für gute Geschichten und Gaming zu haben."</i></p>
         </div>
 
-        <div class="team-member">
+        <div class="team-member" data-mcname="Pfeiltasten">
           <img src="bild/team/pfeiltasten.png" alt="Sr. Pfeiltasten">
           <h3>Pfeiltasten</h3>
           <div class="role">Sr.Developer</div>
           <p>"Bug gefunden. Ursache ebenfalls. Ich gehe trotzdem erstmal essen."</p>
         </div>
 
-        <div class="team-member">
+        <div class="team-member" data-mcname="Marvin">
           <img src="bild/team/Marvin.png" alt="Marvin">
           <h3>Marvin</h3>
           <div class="role">Developer</div>
           <p>"Etwas klappt nicht, erstmal Neustarten! Ansonsten TICKET!."</p>
         </div>
 
-        <div class="team-member">
+        <div class="team-member" data-mcname="NeinNichtDoch">
           <img src="bild/team/..." alt="Marvin">
           <h3>NeinNichtDoch</h3>
           <div class="role">T-Developer</div>
           <p>"Etwas klappt nicht, erstmal Neustarten! Ansonsten TICKET!."</p>
         </div>
 
-        <div class="team-member">
+        <div class="team-member" data-mcname="xTedary">
           <img src="bild/team/xtedary.png" alt="xTedary">
           <h3>xTedary</h3>
           <div class="role">Supporter</div>
           <p>"Text folgt..."</p>
         </div>
 
-        <div class="team-member">
+        <div class="team-member" data-mcname="Lederhans">
           <img src="bild/team/Lederhans.png" alt="Lederhans">
           <h3>Lederhans</h3>
           <div class="role">Supporter</div>
           <p><i>"Text folgt..."</i></p>
         </div>
 
-        <div class="team-member">
+        <div class="team-member" data-mcname="PocketTank2002">
           <img src="bild/team/pockettank.png" alt="PocketTank2002">
           <h3>PocketTank2002</h3>
           <div class="role">Builder</div>
           <p><i>"Text folgt..."</i></p>
         </div>
 
-        <div class="team-member">
+        <div class="team-member" data-mcname="FLECKY1126">
           <img src="bild/team/..." alt="PocketTank2002">
           <h3>FLECKY1126</h3>
           <div class="role">Builder</div>
           <p><i>"Erfolg beginnt dort, wo Entschlossenheit den ersten Schritt macht."</i></p>
         </div>
 
-        <div class="team-member">
+        <div class="team-member" data-mcname="SchereJuwel5">
           <img src="bild/team/..." alt="PocketTank2002">
           <h3>SchereJuwel5</h3>
           <div class="role">Builder</div>
@@ -443,5 +496,6 @@
 // P       A    A   R R     A    A   D    D      II           S  E
 // P       A    A   R  R    A    A   DDDDDD   IIIIIIII   SSSSSS   EEEEEEEE
   </script>
+  <script src="assets/js/team-skins.js"></script>
 </body>
 </html>

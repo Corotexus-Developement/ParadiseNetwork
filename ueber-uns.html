@@ -75,6 +75,13 @@
     .team-member .skin-btn { right: 8px; top: 8px; }
     .team-member .member-btn img { width: 24px; height: 24px; display: block; border-radius: 4px; }
 
+    /* Avatar flip (coin) animation */
+    .avatar-wrap { display: inline-block; perspective: 900px; }
+    .avatar-wrap .avatar { display: block; width: 90px; height: 90px; border-radius: 50%; transition: transform 0.6s; transform-style: preserve-3d; backface-visibility: hidden; }
+    .avatar-wrap.flipping { transform-origin: center; }
+    .avatar-wrap.flipping .avatar { transform: rotateY(180deg); }
+    .avatar-wrap .avatar.loading { filter: blur(2px) brightness(0.9); }
+
     /* Modal / Karte (kleine Karte mit Biografie) */
     .team-modal-overlay {
       position: fixed;
@@ -319,17 +326,17 @@
           <img src="bild/team/derder96-2.png" alt="derder96">
           <h3>derder96</h3>
           <div class="role">Owner</div>
-          <p>"Ich bin der erste Teamler meines Servers"</p>
+          <p><i>"Ich bin der erste Teamler meines Servers"</i></p>
         </div>
 
         <div class="team-member" data-mcname="HoChilli_">
           <img src="bild/team/HoChilli.jpg" alt="HoChilli">
           <h3>HoChilli_</h3>
           <div class="role">Co-Owner</div>
-          <p>"Schafe spawnen nur wenn du sie nicht brauchst."</p>
+          <p><i>"Schafe spawnen nur wenn du sie nicht brauchst."</i></p>
         </div>
       
-        <div class="team-member" data-mcname="KiragoPV">
+        <div class="team-member" data-mcname="KiragoPV" data-bio="Wer möchte Bedrock? :)">
           <img src="bild/team/leonie.jpg" alt="Leonie">
           <h3>KiragoPV</h3>
           <div class="role">Co-Owner</div>
@@ -347,35 +354,35 @@
           <img src="bild/team/pfeiltasten.png" alt="Sr. Pfeiltasten">
           <h3>Pfeiltasten</h3>
           <div class="role">Sr.Developer</div>
-          <p>"Bug gefunden. Ursache ebenfalls. Ich gehe trotzdem erstmal essen."</p>
+          <p><i>"Bug gefunden. Ursache ebenfalls. Ich gehe trotzdem erstmal essen."</i></p>
         </div>
 
         <div class="team-member" data-mcname="Marvin">
           <img src="bild/team/Marvin.png" alt="Marvin">
           <h3>Marvin</h3>
           <div class="role">Developer</div>
-          <p>"Etwas klappt nicht, erstmal Neustarten! Ansonsten TICKET!."</p>
+          <p><i>"Etwas klappt nicht, erstmal Neustarten! Ansonsten TICKET!."</i></p>
         </div>
 
         <div class="team-member" data-mcname="NeinNichtDoch">
           <img src="bild/team/..." alt="Marvin">
           <h3>NeinNichtDoch</h3>
           <div class="role">T-Developer</div>
-          <p>"Etwas klappt nicht, erstmal Neustarten! Ansonsten TICKET!."</p>
+          <p><i>"Erfolg ist kein Glück, Erfolg ist wenn dein Code so funktioniert wie er soll."</i></p>
         </div>
 
-        <div class="team-member" data-mcname="xTedary">
+        <div class="team-member" data-mcname="Nutella_Teddy">
           <img src="bild/team/xtedary.png" alt="xTedary">
           <h3>xTedary</h3>
           <div class="role">Supporter</div>
-          <p>"Text folgt..."</p>
+          <p><i>"Hier könnte etwas von xTedary stehen..."</i></p>
         </div>
 
         <div class="team-member" data-mcname="Lederhans">
           <img src="bild/team/Lederhans.png" alt="Lederhans">
           <h3>Lederhans</h3>
           <div class="role">Supporter</div>
-          <p><i>"Text folgt..."</i></p>
+          <p><i>"Wenn du schnell gehen willst, geh allein. Wenn du weit gehen willst, geh gemeinsam."</i></p>
         </div>
 
         <div class="team-member" data-mcname="PocketTank2002">

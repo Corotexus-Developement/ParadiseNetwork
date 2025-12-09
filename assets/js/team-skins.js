@@ -28,39 +28,62 @@ document.addEventListener('DOMContentLoaded', function() {
 
     member.appendChild(bioBtn);
     member.appendChild(skinBtn);
-    // handle skin toggle
+    // handle skin toggle with flip animation
     const avatarImg = member.querySelector('img');
     if (avatarImg) {
-      // store original image (the one you configured) so toggle can restore it
+      // wrap avatar in .avatar-wrap if not already
+      let wrap = avatarImg.parentElement;
+      if (!wrap || !wrap.classList || !wrap.classList.contains('avatar-wrap')) {
+        wrap = document.createElement('div');
+        wrap.className = 'avatar-wrap';
+        avatarImg.parentNode.insertBefore(wrap, avatarImg);
+        wrap.appendChild(avatarImg);
+      }
+      // ensure img has class 'avatar' for styling
+      avatarImg.classList.add('avatar');
+
+      // speicher für bildquellen und eastereggs
       if (!member.dataset.origSrc) member.dataset.origSrc = avatarImg.src;
-      // on load: show the skin by default
+      // standard auflösung mcskin
       avatarImg.src = makeSkinHeadUrl(mcName, 200);
       member.dataset.skinShown = '1';
-    }
 
-    skinBtn.addEventListener('click', function(e) {
-      e.stopPropagation();
-      if (!avatarImg) return;
-      const skinUrl = makeSkinHeadUrl(mcName, 200);
-      if (member.dataset.skinShown === '1') {
-        // currently showing skin -> switch to original configured image
-        if (member.dataset.origSrc) {
-          avatarImg.src = member.dataset.origSrc;
-        }
-        member.dataset.skinShown = '0';
-      } else {
-        // currently showing original -> switch to skin
-        avatarImg.src = skinUrl;
-        member.dataset.skinShown = '1';
+      function animateFlip(imgEl, newSrc, duration = 600, onDone) {
+        const container = imgEl.parentElement;
+        if (!container || container.classList.contains('flipping')) return;
+        container.classList.add('flipping');
+        imgEl.classList.add('loading');
+        const half = Math.floor(duration / 2);
+        setTimeout(() => {
+          imgEl.src = newSrc;
+          imgEl.classList.remove('loading');
+        }, half);
+        setTimeout(() => {
+          container.classList.remove('flipping');
+          if (typeof onDone === 'function') onDone();
+        }, duration + 10);
       }
-    });
+
+      skinBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const skinUrl = makeSkinHeadUrl(mcName, 200);
+        if (member.dataset.skinShown === '1') {
+          const target = member.dataset.origSrc || skinUrl;
+          animateFlip(avatarImg, target, 600, () => { member.dataset.skinShown = '0'; });
+        } else {
+          // currently showing original -> flip to skin
+          animateFlip(avatarImg, skinUrl, 600, () => { member.dataset.skinShown = '1'; });
+        }
+      });
+    }
 
     // handle bio modal
     bioBtn.addEventListener('click', function(e) {
       e.stopPropagation();
       const name = (member.querySelector('h3') && member.querySelector('h3').textContent) || mcName;
       const role = (member.querySelector('.role') && member.querySelector('.role').textContent) || '';
-      const bio = (member.querySelector('p') && member.querySelector('p').innerHTML) || '';
+      // prefer explicit data-bio attribute so you can change the modal bio
+      const bio = (member.dataset && member.dataset.bio) ? member.dataset.bio : ((member.querySelector('p') && member.querySelector('p').innerHTML) || '');
       const thumbSrc = makeSkinHeadUrl(mcName, 100);
 
       const overlay = document.createElement('div');
